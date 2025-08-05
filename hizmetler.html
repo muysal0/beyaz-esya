@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetler - Beyaz Esya</title>
+    <style>
+        .menu-icon { display: none; }
+        .nav-links { display: flex; }
+        
+        @media (max-width: 768px) {
+            .menu-icon { 
+                display: block;
+                font-size: 24px;
+                cursor: pointer;    
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: #1D3557;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 10px 0;
+            }
+            .nav-links a {
+                padding: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links:target {
+                display: flex;
+            }
+            /* Mobile 3x3 grid layout - keep same as desktop */
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 10px !important;
+            }
+            .service-box {
+                padding: 10px !important;
+            }
+            .service-box h2 {
+                font-size: 14px !important;
+            }
+            .service-box p {
+                font-size: 11px !important;
+                margin-bottom: 10px !important;
+            }
+            .service-box div {
+                font-size: 25px !important;
+                margin-bottom: 8px !important;
+            }
+            /* Adjust center call button for mobile */
+            .center-call-button {
+                padding: 10px !important;
+            }
+            .center-call-button div {
+                font-size: 30px !important;
+                margin-bottom: 5px !important;
+            }
+            .center-call-button h2 {
+                font-size: 14px !important;
+                margin: 0 !important;
+            }
+            .center-call-button p {
+                font-size: 10px !important;
+                margin: 5px 0 0 0 !important;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #464f54; margin: 0;">
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #1D3557; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div>
+        <a href="main.html" style="font-size: 30px; color: white; margin-left: 15px; text-decoration: none;">Beyaz Esya</a>
+        </div>
+        <a href="#nav-links" class="menu-icon" style="text-decoration: none; color: white;">☰</a>
+        <nav class="nav-links" id="nav-links">
+            <a href="main.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Ana Sayfa</a>
+            <a href="hizmetler.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;font-weight: bold;">Hizmetler</a>
+            <a href="hakkimizda.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Hakkimizda</a>
+            <a href="iletisim.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Iletisim</a>
+        </nav>
+    </header>
+    <div style="position: fixed; bottom: 20px; right: 20px; background-color: #4CAF50; padding: 15px 35px; border-radius: 50px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 18px; font-weight: bold; cursor: pointer; color: white;">
+        Bizi Arayin
+    </div>
+
+    <main style="background-color: #464f54; padding: 10px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                
+                <!-- Row 1 -->
+                <!-- Beyaz Eşya Servisi -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">🏠</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/beyazesya.html" style="color: #1976d2; text-decoration: none;">Beyaz Eşya Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Tüm beyaz eşya markalarının garantisi dolmuş ürünleri için profesyonel tamir ve bakım hizmetleri sunuyoruz.
+                    </p>
+                </div>
+
+                <!-- Buzdolabı -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">❄️</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/buzdolabi.html" style="color: #1976d2; text-decoration: none;">Buzdolabı Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Soğutma sistemi arızaları, termostat değişimi, gaz kaçağı tamiri ve genel bakım hizmetleri sağlıyoruz.
+                    </p>
+                </div>
+
+                <!-- Çamaşır Makinesi -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">👕</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/camasir.html" style="color: #1976d2; text-decoration: none;">Çamaşır Makinesi Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Motor arızaları, program kartı değişimi, rulman değişimi ve diğer tamir işlemleri yapılır.
+                    </p>
+                </div>
+
+                <!-- Row 2 -->
+                <!-- Bulaşık Makinesi -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">🍽️</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/bulasik.html" style="color: #1976d2; text-decoration: none;">Bulaşık Makinesi Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Su alma/boşaltma sorunları, pompa arızaları, program arızaları ve genel bakım hizmetleri verilir.
+                    </p>
+                </div>
+
+                <!-- Hemen Ara Butonu (Center) -->
+                <div class="center-call-button" style="background: #4CAF50; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); padding: 20px; text-align: center; display: flex; align-items: center; justify-content: center;">
+                    <a href="#" style="text-decoration: none;">
+                        <div style="font-size: 50px; color: white; margin-bottom: 10px;">📞</div>
+                        <h2 style="color: white; margin: 0; font-size: 24px; font-weight: bold;">Hemen Ara</h2>
+                        <p style="color: white; margin: 10px 0 0 0; font-size: 16px;">7/24 Hizmetinizdeyiz</p>
+                    </a>
+                </div>
+
+                <!-- Fırın -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">🔥</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/firin.html" style="color: #1976d2; text-decoration: none;">Fırın Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Isıtma problemi, termostat arızası, rezistans değişimi ve elektronik kart tamiri yapılır.
+                    </p>
+                </div>
+
+                <!-- Row 3 -->
+                <!-- Klima -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">❄️</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/klima.html" style="color: #1976d2; text-decoration: none;">Klima Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Gaz dolumu, filtre temizliği, elektronik kart arızaları ve genel bakım hizmetleri sunuyoruz.
+                    </p>
+                </div>
+
+                <!-- Kombi -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">🔥</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/kombi.html" style="color: #1976d2; text-decoration: none;">Kombi Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Isıtma sorunları, petekler ısınmama, su basınç sorunları ve yıllık bakım hizmetleri verilir.
+                    </p>
+                </div>
+
+                <!-- Televizyon -->
+                <div class="service-box" style="background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; text-align: center;">
+                    <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">📺</div>
+                    <h2 style="margin-bottom: 15px;"><a href="hizmetleralt/televizyon.html" style="color: #1976d2; text-decoration: none;">Televizyon Servisi</a></h2>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.6;">
+                        Görüntü/ses sorunları, panel arızaları, anakart tamiri ve yazılım güncelleme işlemleri yapılır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer style="background-color: #1D3557; padding: 40px 0; margin-top: 50px; border-top: 1px solid #ffffff;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                <div style="flex: 1;">
+                    <h3 style="color: white; margin-bottom: 20px;">Navigasyon</h3>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 10px;"><a href="main.html" style="color: white; text-decoration: none; display: inline;">Ana Sayfa</a></div>
+                        <div style="margin-bottom: 10px;"><a href="hizmetler.html" style="color: white; text-decoration: none; display: inline;">Hizmetler</a></div>
+                        <div style="margin-bottom: 10px;"><a href="hakkimizda.html" style="color: white; text-decoration: none; display: inline;">Hakkımızda</a></div>
+                        <div style="margin-bottom: 10px;"><a href="iletisim.html" style="color: white; text-decoration: none; display: inline;">İletişim</a></div>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <h3 style="color: white; margin-bottom: 20px;">Yasal</h3>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 10px;"><a href="kvkk.html" style="color: white; text-decoration: none; display: inline;">KVKK</a></div>
+                        <div style="margin-bottom: 10px;"><a href="gizlilik-politikasi.html" style="color: white; text-decoration: none; display: inline;">Gizlilik Politikası</a></div>
+                    </div>
+                </div>
+                <div style="flex: 2;">
+                    <h3 style="color: white; margin-bottom: 20px;">Önemli Bilgilendirme</h3>
+                    <p style="color: white; line-height: 1.6;">
+                        Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
+                        Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
+                    </p>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #ffffff;">
+                <p style="color: white; margin: 0;">© 2025 Beyaz Esya. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

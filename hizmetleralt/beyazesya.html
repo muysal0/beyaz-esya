@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyaz Esya Servisi - Beyaz Esya</title>
+    <style>
+        .menu-icon { display: none; }
+        .nav-links { display: flex; }
+        
+        @media (max-width: 768px) {
+            .menu-icon { 
+                display: block;
+                font-size: 24px;
+                cursor: pointer;    
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: #1D3557;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 10px 0;
+            }
+            .nav-links a {
+                padding: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links:target {
+                display: flex;
+            }
+            /* Mobile main content adjustments */
+            main {
+                padding: 20px 0 !important;
+            }
+            /* Mobile white content box */
+            .white-content-box {
+                padding: 20px !important;
+                margin: 0 10px !important;
+                border-radius: 10px !important;
+            }
+            .white-content-box h1 {
+                font-size: 28px !important;
+                margin-bottom: 20px !important;
+            }
+            .white-content-box p {
+                font-size: 16px !important;
+                margin-bottom: 25px !important;
+                line-height: 1.6 !important;
+            }
+            /* Mobile call button adjustments */
+            .mobile-call-section {
+                margin-top: 20px !important;
+            }
+            .mobile-call-button {
+                max-width: 280px !important;
+                padding: 12px !important;
+            }
+            .mobile-call-button div:first-child {
+                font-size: 25px !important;
+                margin-bottom: 6px !important;
+            }
+            .mobile-call-button h2 {
+                font-size: 18px !important;
+                margin-bottom: 4px !important;
+            }
+            .mobile-call-button p {
+                font-size: 12px !important;
+                margin-bottom: 6px !important;
+            }
+            .mobile-call-button div:last-child {
+                font-size: 16px !important;
+            }
+            /* Hide fixed call button on mobile to avoid overlap */
+            .fixed-call-button {
+                display: none !important;
+            }
+            /* Mobile feature cards */
+            .feature-cards {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                margin-bottom: 25px !important;
+            }
+            .feature-card {
+                padding: 16px !important;
+                margin: 0 !important;
+                border-radius: 8px !important;
+            }
+            .feature-card div:first-child {
+                font-size: 28px !important;
+                margin-bottom: 10px !important;
+            }
+            .feature-card h3 {
+                font-size: 16px !important;
+                margin-bottom: 8px !important;
+            }
+            .feature-card p {
+                font-size: 13px !important;
+                line-height: 1.5 !important;
+                margin: 0 !important;
+            }
+            /* Mobile reviews section */
+            .reviews-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+            .review-box {
+                padding: 15px !important;
+            }
+            .review-box h4 {
+                font-size: 14px !important;
+            }
+            .review-box p {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #464f54; margin: 0;">
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #1D3557; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div>
+            <a href="../main.html" style="font-size: 30px; color: white; margin-left: 15px; text-decoration: none;">Beyaz Esya</a>
+        </div>
+        <a href="#nav-links" class="menu-icon" style="text-decoration: none; color: white;">☰</a>
+        <nav class="nav-links" id="nav-links">
+            <a href="../main.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Ana Sayfa</a>
+            <a href="../hizmetler.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Hizmetler</a>
+            <a href="../hakkimizda.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Hakkimizda</a>
+            <a href="../iletisim.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Iletisim</a>
+        </nav>
+    </header>
+    <div class="fixed-call-button" style="position: fixed; bottom: 20px; right: 20px; background-color: #4CAF50; padding: 15px 35px; border-radius: 50px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 18px; font-weight: bold; cursor: pointer; color: white;">
+        Bizi Arayin
+    </div>
+
+    <!-- Main content will go here -->
+    <main style="background-color: #464f54; padding: 60px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- White content box -->
+            <div class="white-content-box" style="background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); padding: 40px; text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #1976d2; margin-bottom: 30px; font-size: 36px;">Beyaz Eşya Servisi</h1>
+                <p style="color: #666; font-size: 18px; line-height: 1.8; margin-bottom: 40px;">
+                    Tüm beyaz eşya markalarının garantisi dolmuş ürünleri için profesyonel tamir ve bakım hizmetleri sunuyoruz. 
+                    Deneyimli teknisyen ekibimizle, buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve diğer beyaz eşyalarınızın 
+                    arızalarını hızlı ve güvenilir bir şekilde çözüyoruz.
+                </p>
+                
+                <!-- Feature Cards -->
+                <div class="feature-cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
+                    <!-- Uzman Card -->
+                    <div class="feature-card" style="background: #f8f9fa; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; text-align: center; border: 2px solid #e9ecef;">
+                        <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">🛠️</div>
+                        <h3 style="color: #1976d2; margin-bottom: 10px; font-size: 18px;">Uzman Ekip</h3>
+                        <p style="color: #666; font-size: 14px; line-height: 1.5;">
+                            Beyaz eşya tamirinde yılların deneyimi olan uzman teknisyen kadromuz
+                        </p>
+                    </div>
+                    
+                    <!-- Hızlı Card -->
+                    <div class="feature-card" style="background: #f8f9fa; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; text-align: center; border: 2px solid #e9ecef;">
+                        <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">⚡</div>
+                        <h3 style="color: #1976d2; margin-bottom: 10px; font-size: 18px;">Hızlı Çözüm</h3>
+                        <p style="color: #666; font-size: 14px; line-height: 1.5;">
+                            Aynı gün servis hizmeti ile arızalarınızı hızla çözüyoruz
+                        </p>
+                    </div>
+                    
+                    <!-- Ekonomik Card -->
+                    <div class="feature-card" style="background: #f8f9fa; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; text-align: center; border: 2px solid #e9ecef;">
+                        <div style="font-size: 40px; color: #1565C0; margin-bottom: 15px;">💰</div>
+                        <h3 style="color: #1976d2; margin-bottom: 10px; font-size: 18px;">Ekonomik Fiyat</h3>
+                        <p style="color: #666; font-size: 14px; line-height: 1.5;">
+                            Uygun fiyat politikamız ile kaliteli hizmeti herkes için erişilebilir kılıyoruz
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Large Call Now Section -->
+                <div class="mobile-call-section" style="margin-top: 30px;">
+                    <a href="tel:+905123456789" style="text-decoration: none; display: block;">
+                        <div class="mobile-call-button" style="background: #4CAF50; border-radius: 10px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s; max-width: 300px; margin: 0 auto;">
+                            <div style="font-size: 30px; color: white; margin-bottom: 8px;">📞</div>
+                            <h2 style="color: white; font-size: 20px; margin-bottom: 5px; font-weight: bold;">HEMEN ARA</h2>
+                            <p style="color: white; font-size: 14px; margin-bottom: 8px;">7/24 Hizmetinizdeyiz</p>
+                            <div style="color: white; font-size: 18px; font-weight: bold;">0512 345 67 89</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Customer Reviews Section -->
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #1976d2; margin-bottom: 25px; font-size: 24px;">Müşteri Yorumları</h3>
+                    <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        
+                        <!-- Review 1 -->
+                        <div class="review-box" style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Ahmet Yılmaz</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Buzdolabımız bozuldu, aynı gün gelip tamir ettiler. Çok memnun kaldık, fiyatları da uygun."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 2 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Fatma Demir</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Çamaşır makinesinin motoru arızalanmıştı. Profesyonel ekip sayesinde kısa sürede çözüldü."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 3 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Mehmet Kaya</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Fırınımızın rezistansı değişti. Temiz çalışma ve garantili hizmet. Teşekkürler."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 4 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Ayşe Öztürk</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Bulaşık makinesi su almıyordu. Hızlı müdahale ve kaliteli iş. Herkese tavsiye ederim."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 5 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Mustafa Aksoy</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Klimamızın gazı doldu. Soğutma sistemi mükemmel çalışıyor. Ekonomik fiyatlar."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 6 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Zeynep Çelik</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Kombi bakımı yaptırdık. Detaylı inceleme ve bakım. Güvenilir hizmet."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 7 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Hasan Polat</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Televizyonumuzun anakartı değişti. Uzman ekip ve kaliteli parçalar kullanıldı."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 8 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Emine Şahin</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Çamaşır makinesinin rulmanı değişti. Gürültü sorunu tamamen çözüldü. Mükemmel!"
+                            </p>
+                        </div>
+                        
+                        <!-- Review 9 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">İbrahim Yıldız</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Buzdolabının termostatı arızalanmıştı. Hızlı tespit ve onarım. Çok başarılı."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 10 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Hatice Doğan</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Fırının elektronik kartı değişti. Artık tüm fonksiyonları mükemmel çalışıyor."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 11 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Ali Özkan</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Bulaşık makinesi pompa arızası vardı. Aynı gün çözüldü. Uygun fiyat ve kaliteli hizmet."
+                            </p>
+                        </div>
+                        
+                        <!-- Review 12 -->
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4CAF50;">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <h4 style="color: #1976d2; margin: 0; font-size: 16px;">Nurcan Aydın</h4>
+                            </div>
+                            <p style="color: #666; font-size: 14px; line-height: 1.5; margin: 0; font-style: italic;">
+                                "Klimamızın filtresi temizlendi ve gazı kontrol edildi. Profesyonel hizmet aldık."
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- FAQ Section -->
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #1976d2; margin-bottom: 25px; font-size: 24px;">Sıkça Sorulan Sorular</h3>
+                    <div style="background: #f8f9fa; border-radius: 10px; padding: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        
+                        <!-- FAQ 1 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">❓ Servis çağrımdan sonra ne kadar sürede teknisyen gelir?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Acil durumlar için aynı gün, normal servis talepleri için 24-48 saat içinde teknisyen ekibimiz adresinize gelir. 
+                                Randevu saatinizi size uygun şekilde planlarız.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 2 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">💰 Tamir ücretleri nasıl belirleniyor?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Keşif ücreti sabitdir. Parça ve işçilik ücretleri arıza türüne göre değişir. 
+                                Tüm fiyatlarımız şeffaf olup, işe başlamadan önce size detaylı bilgi verilir.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 3 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">🔧 Kullandığınız yedek parçalar orijinal mi?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Mümkün olduğunca orijinal parçaları tercih ediyoruz. Orijinal parça bulunamadığında, 
+                                kaliteli muadil parçaları kullanıyor ve size bilgi veriyoruz.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 4 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">📋 Yaptığınız tamirler için garanti veriyor musunuz?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Evet, tüm tamir işlemlerimiz için 1 yıl işçilik garantisi veriyoruz. 
+                                Yedek parçalar için de üretici garantisi geçerlidir.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 5 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">🏠 Sadece evde mi servis veriyorsunuz?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Hem evde hem de iş yerlerinde servis hizmeti veriyoruz. Küçük ev aletleri için 
+                                atölyemizde de tamir hizmeti sunuyoruz.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 6 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">⏰ Hafta sonu ve tatil günlerinde çalışıyor musunuz?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Hafta sonu normal mesai saatlerinde çalışıyoruz. Acil durumlar için 
+                                7/24 ulaşılabilir durumdayız ve ek ücret karşılığında hizmet veriyoruz.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 7 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">💳 Hangi ödeme yöntemlerini kabul ediyorsunuz?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Nakit, banka kartı, kredi kartı ve havale ile ödeme alabiliyoruz. 
+                                Büyük tutarlar için taksitli ödeme seçenekleri de mevcuttur.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 8 -->
+                        <div style="margin-bottom: 25px; border-bottom: 1px solid #e9ecef; padding-bottom: 20px;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">🚫 Hangi durumlarda tamir yapmıyorsunuz?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Garantili ürünlerde, tamiri ekonomik olmayan eskimiş cihazlarda ve 
+                                güvenlik riski oluşturan hasarlı ürünlerde tamir hizmeti vermiyoruz.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 9 -->
+                        <div style="margin-bottom: 0;">
+                            <h4 style="color: #1976d2; margin-bottom: 10px; font-size: 16px;">📞 Arızamın acil olup olmadığını nasıl anlarım?</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0;">
+                                Su sızıntısı, gaz kokusu, elektrik problemi gibi güvenlik riski oluşturan durumlar acildir. 
+                                Bu durumda hemen bizi arayın, aynı gün müdahale ederiz.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background-color: #1D3557; padding: 40px 0; margin-top: 50px; border-top: 1px solid #ffffff;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                <div style="flex: 1;">  
+                    <h3 style="color: white; margin-bottom: 20px;">Navigasyon</h3>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 10px;"><a href="../main.html" style="color: white; text-decoration: none; display: inline;">Ana Sayfa</a></div>
+                        <div style="margin-bottom: 10px;"><a href="../hizmetler.html" style="color: white; text-decoration: none; display: inline;">Hizmetler</a></div>
+                        <div style="margin-bottom: 10px;"><a href="../hakkimizda.html" style="color: white; text-decoration: none; display: inline;">Hakkımızda</a></div>
+                        <div style="margin-bottom: 10px;"><a href="../iletisim.html" style="color: white; text-decoration: none; display: inline;">İletişim</a></div>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <h3 style="color: white; margin-bottom: 20px;">Yasal</h3>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 10px;"><a href="../kvkk.html" style="color: white; text-decoration: none; display: inline;">KVKK</a></div>
+                        <div style="margin-bottom: 10px;"><a href="../gizlilik-politikasi.html" style="color: white; text-decoration: none; display: inline;">Gizlilik Politikası</a></div>
+                    </div>
+                </div>
+                <div style="flex: 2;">
+                    <h3 style="color: white; margin-bottom: 20px;">Önemli Bilgilendirme</h3>
+                    <p style="color: white; line-height: 1.6;">
+                        Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
+                        Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
+                    </p>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #ffffff;">
+                <p style="color: white; margin: 0;">© 2025 Beyaz Esya. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
