@@ -34,6 +34,46 @@
             .nav-links:target {
                 display: flex;
             }
+            /* Mobile optimizations for about page */
+            main {
+                padding: 20px 0 !important;
+            }
+            .about-container {
+                max-width: 100% !important;
+                padding: 0 15px !important;
+            }
+            .about-box {
+                padding: 20px !important;
+                margin-bottom: 20px !important;
+            }
+            .about-box h1 {
+                font-size: 28px !important;
+                margin-bottom: 20px !important;
+            }
+            .about-box h2 {
+                font-size: 22px !important;
+                margin-bottom: 10px !important;
+            }
+            .about-box h3 {
+                font-size: 20px !important;
+                margin-bottom: 10px !important;
+            }
+            .about-box p {
+                font-size: 14px !important;
+                margin-bottom: 15px !important;
+            }
+            .call-button {
+                padding: 15px 25px !important;
+            }
+            .call-button div {
+                font-size: 25px !important;
+            }
+            .call-button h2 {
+                font-size: 20px !important;
+            }
+            .call-button p {
+                font-size: 14px !important;
+            }
         }
     </style>
 </head>
@@ -55,42 +95,95 @@
     </div>
 
     <main style="background-color: #464f54; padding: 60px 0;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <!-- Existing content will stay here -->
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+            <!-- Hakkımızda Bilgi Kutusu -->
+            <div style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #1976d2; margin-bottom: 30px; font-size: 36px;">Hakkımızda</h1>
+                
+                <div style="margin-bottom: 30px;">
+                    <h2 style="color: #1565C0; margin-bottom: 15px; font-size: 28px;">Beyaz Eşya Teknik Servis</h2>
+                    <p style="color: #666; font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                        2010 yılından beri İstanbul genelinde beyaz eşya tamiri konusunda hizmet vermekteyiz. 
+                        Deneyimli teknisyen kadromuz ile tüm marka beyaz eşyalarınızın garantisi dolmuş 
+                        ürünlerinin tamiri konusunda profesyonel hizmet sunuyoruz.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1565C0; margin-bottom: 15px; font-size: 24px;">📍 Adres Bilgileri</h3>
+                    <p style="color: #666; font-size: 16px; line-height: 1.6;">
+                        <strong>Merkez Ofis:</strong><br>
+                        Ataşehir Mahallesi, Teknoloji Caddesi No: 45/A<br>
+                        Ataşehir / İSTANBUL<br>
+                        <strong>Telefon:</strong> 0212 555 0123<br>
+                        <strong>Çalışma Saatleri:</strong> 09:00 - 18:00 (Pazartesi - Cumartesi)
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: #1565C0; margin-bottom: 15px; font-size: 24px;">🔧 Hizmetlerimiz</h3>
+                    <p style="color: #666; font-size: 16px; line-height: 1.6;">
+                        Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon 
+                        tamiri konularında uzman teknisyen kadromuz ile 7/24 hizmet vermekteyiz. 
+                        Garantisi dolmuş tüm beyaz eşya ürünleriniz için hızlı ve güvenilir çözümler sunuyoruz.
+                    </p>
+                </div>
             </div>
-        </div>
+
+            <!-- Hemen Ara Butonu -->
+            <div style="text-align: center;">
+                <a href="tel:02125550123" style="text-decoration: none; display: block;">
+                    <div style="background: #4CAF50; padding: 20px 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                        <div style="font-size: 30px; color: white; margin-bottom: 5px;">📞</div>
+                        <h2 style="color: white; margin: 0; font-size: 24px; font-weight: bold;">Hemen Ara</h2>
+                        <p style="color: white; margin: 5px 0 0 0; font-size: 16px;">0212 555 0123</p>
+                    </div>
+                </a>
+            </div>
     </main>
 
-    <footer style="background-color: #1D3557; padding: 40px 0; margin-top: 50px; border-top: 1px solid #ffffff;">
+    <footer style="background-color: #1D3557; padding: 40px 0; margin-top: 50px;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
-                <div style="flex: 1;">
-                    <h3 style="color: white; margin-bottom: 20px;">Navigasyon</h3>
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="margin-bottom: 10px;"><a href="main.html" style="color: white; text-decoration: none; display: inline;">Ana Sayfa</a></div>
-                        <div style="margin-bottom: 10px;"><a href="hizmetler.html" style="color: white; text-decoration: none; display: inline;">Hizmetler</a></div>
-                        <div style="margin-bottom: 10px;"><a href="hakkimizda.html" style="color: white; text-decoration: none; display: inline;">Hakkımızda</a></div>
-                        <div style="margin-bottom: 10px;"><a href="iletisim.html" style="color: white; text-decoration: none; display: inline;">İletişim</a></div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">🧭 Navigasyon</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="main.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🏠 Ana Sayfa</a>
+                        <a href="hizmetler.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔧 Hizmetler</a>
+                        <a href="hakkimizda.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">ℹ️ Hakkımızda</a>
+                        <a href="iletisim.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">📞 İletişim</a>
                     </div>
                 </div>
-                <div style="flex: 1;">
-                    <h3 style="color: white; margin-bottom: 20px;">Yasal</h3>
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="margin-bottom: 10px;"><a href="kvkk.html" style="color: white; text-decoration: none; display: inline;">KVKK</a></div>
-                        <div style="margin-bottom: 10px;"><a href="gizlilik-politikasi.html" style="color: white; text-decoration: none; display: inline;">Gizlilik Politikası</a></div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">🔧 Hizmetler</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="hizmetleralt/beyazesya.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🏠 Beyaz Eşya Servisi</a>
+                        <a href="hizmetleralt/buzdolabi.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">❄️ Buzdolabı Servisi</a>
+                        <a href="hizmetleralt/camasir.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">👕 Çamaşır Makinesi Servisi</a>
+                        <a href="hizmetleralt/bulasik.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🍽️ Bulaşık Makinesi Servisi</a>
+                        <a href="hizmetleralt/firin.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔥 Fırın Servisi</a>
+                        <a href="hizmetleralt/klima.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">❄️ Klima Servisi</a>
+                        <a href="hizmetleralt/kombi.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔥 Kombi Servisi</a>
+                        <a href="hizmetleralt/televizyon.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">📺 Televizyon Servisi</a>
                     </div>
                 </div>
-                <div style="flex: 2;">
-                    <h3 style="color: white; margin-bottom: 20px;">Önemli Bilgilendirme</h3>
-                    <p style="color: white; line-height: 1.6;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">⚖️ Yasal</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="kvkk.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">📋 KVKK</a>
+                        <a href="gizlilik-politikasi.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔒 Gizlilik Politikası</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">⚠️ Önemli Bilgilendirme</h3>
+                    <p style="color: #E9C46A; line-height: 1.6; font-size: 14px;">
                         Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
                         Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
                     </p>
                 </div>
             </div>
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #ffffff;">
-                <p style="color: white; margin: 0;">© 2025 Beyaz Esya. Tüm hakları saklıdır.</p>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #E9C46A;">
+                <p style="color: white; margin: 0; font-size: 14px;">© 2025 Beyaz Esya Teknik Servis. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>

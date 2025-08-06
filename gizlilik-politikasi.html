@@ -34,10 +34,29 @@
             .nav-links:target {
                 display: flex;
             }
+            .content-box {
+                max-width: 95% !important;
+                padding: 20px !important;
+                margin-top: 20px !important;
+            }
+            .content-box h1 {
+                font-size: 28px !important;
+            }
+            .content-box h2 {
+                font-size: 24px !important;
+            }
+            .content-box h3 {
+                font-size: 20px !important;
+            }
+            .content-box p,
+            .content-box li {
+                font-size: 16px !important;
+                line-height: 1.8 !important;
+            }
         }
     </style>
 </head>
-<body style="background-color: #464f54; margin: 0;">
+<body style="background-color: #464f54; margin: 0; font-family: Arial, sans-serif;">
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #1D3557; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
         <div>
             <a href="main.html" style="font-size: 30px; color: white; margin-left: 15px; text-decoration: none;">Beyaz Esya</a>
@@ -46,84 +65,130 @@
         <nav class="nav-links" id="nav-links">
             <a href="main.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Ana Sayfa</a>
             <a href="hizmetler.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Hizmetler</a>
-            <a href="hakkimizda.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Hakkimizda</a>
-            <a href="iletisim.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Iletisim</a>
+            <a href="hakkimizda.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">Hakkımızda</a>
+            <a href="iletisim.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px;">İletişim</a>
         </nav>
     </header>
 
-    <main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
-        <h1 style="color: #333; margin-bottom: 30px;">Gizlilik Politikası</h1>
-        
-        <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <h2 style="color: #444; margin-bottom: 20px;">Gizlilik İlkelerimiz</h2>
+    <div style="position: fixed; bottom: 20px; right: 20px; background-color: #4CAF50; padding: 15px 35px; border-radius: 50px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 18px; font-weight: bold; cursor: pointer; color: white;">
+        Bizi Arayin
+    </div>
+
+    <main style="display: flex; justify-content: center; padding: 40px 20px; min-height: 80vh;">
+        <div class="content-box" style="background-color: white; padding: 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); max-width: 800px; width: 100%; margin-top: 40px;">
+            <h1 style="color: #1D3557; text-align: center; margin-bottom: 40px; font-size: 32px; font-weight: bold;">🔒 Gizlilik Politikası</h1>
             
-            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-                Beyaz Esya olarak, müşterilerimizin gizliliğine büyük önem veriyoruz. Bu gizlilik politikası, hizmetlerimizi kullanırken kişisel bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.
-            </p>
+            <div style="margin-bottom: 30px;">
+                <h2 style="color: #1D3557; margin-bottom: 20px; font-size: 26px; border-bottom: 2px solid #1D3557; padding-bottom: 10px;">📋 Gizlilik İlkelerimiz</h2>
+                <p style="color: #333; line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                    Beyaz Esya olarak, müşterilerimizin gizliliğine büyük önem veriyoruz. Bu gizlilik politikası, hizmetlerimizi kullanırken kişisel bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.
+                </p>
+            </div>
 
-            <h3 style="color: #444; margin: 25px 0 15px;">Toplanan Bilgiler</h3>
-            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-                Hizmetlerimizi kullanırken aşağıdaki bilgileri toplayabiliriz:
-            </p>
-            <ul style="color: #666; line-height: 1.6; margin-bottom: 20px; padding-left: 20px;">
-                <li>Ad ve soyadı</li>
-                <li>İletişim bilgileri (telefon, e-posta)</li>
-                <li>Adres bilgileri</li>
-                <li>Cihaz bilgileri</li>
-            </ul>
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1D3557; margin: 30px 0 20px; font-size: 22px;">📝 Toplanan Bilgiler</h3>
+                <p style="color: #333; line-height: 1.8; margin-bottom: 15px; font-size: 18px;">
+                    Hizmetlerimizi kullanırken aşağıdaki bilgileri toplayabiliriz:
+                </p>
+                <ul style="color: #333; line-height: 1.8; margin-bottom: 20px; padding-left: 30px; font-size: 18px;">
+                    <li style="margin-bottom: 8px;">👤 Ad ve soyadı</li>
+                    <li style="margin-bottom: 8px;">📞 İletişim bilgileri (telefon, e-posta)</li>
+                    <li style="margin-bottom: 8px;">🏠 Adres bilgileri</li>
+                    <li style="margin-bottom: 8px;">🔧 Cihaz ve arıza bilgileri</li>
+                    <li style="margin-bottom: 8px;">📊 Hizmet kullanım bilgileri</li>
+                </ul>
+            </div>
 
-            <h3 style="color: #444; margin: 25px 0 15px;">Bilgilerin Kullanımı</h3>
-            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-                Topladığımız bilgileri aşağıdaki amaçlarla kullanırız:
-            </p>
-            <ul style="color: #666; line-height: 1.6; margin-bottom: 20px; padding-left: 20px;">
-                <li>Hizmet sağlamak ve iyileştirmek</li>
-                <li>Müşteri desteği sunmak</li>
-                <li>İletişim kurmak</li>
-                <li>Yasal yükümlülükleri yerine getirmek</li>
-            </ul>
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1D3557; margin: 30px 0 20px; font-size: 22px;">⚙️ Bilgilerin Kullanımı</h3>
+                <p style="color: #333; line-height: 1.8; margin-bottom: 15px; font-size: 18px;">
+                    Topladığımız bilgileri aşağıdaki amaçlarla kullanırız:
+                </p>
+                <ul style="color: #333; line-height: 1.8; margin-bottom: 20px; padding-left: 30px; font-size: 18px;">
+                    <li style="margin-bottom: 8px;">🛠️ Teknik servis hizmeti sağlamak</li>
+                    <li style="margin-bottom: 8px;">📈 Hizmet kalitesini iyileştirmek</li>
+                    <li style="margin-bottom: 8px;">💬 Müşteri desteği sunmak</li>
+                    <li style="margin-bottom: 8px;">📞 Randevu ve bilgilendirme amaçlı iletişim</li>
+                    <li style="margin-bottom: 8px;">⚖️ Yasal yükümlülükleri yerine getirmek</li>
+                </ul>
+            </div>
 
-            <h3 style="color: #444; margin: 25px 0 15px;">Bilgi Güvenliği</h3>
-            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-                Kişisel bilgilerinizi korumak için endüstri standardı güvenlik önlemleri kullanıyoruz. Bilgileriniz şifreleme ve güvenli sunucular aracılığıyla korunmaktadır.
-            </p>
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1D3557; margin: 30px 0 20px; font-size: 22px;">🔐 Bilgi Güvenliği</h3>
+                <p style="color: #333; line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                    Kişisel bilgilerinizi korumak için endüstri standardı güvenlik önlemleri kullanıyoruz. Bilgileriniz şifreleme teknolojileri ve güvenli sunucular aracılığıyla korunmaktadır. Verilerinize yalnızca yetkili personelimiz erişebilir.
+                </p>
+            </div>
 
-            <h3 style="color: #444; margin: 25px 0 15px;">Çerezler</h3>
-            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-                Web sitemizde deneyiminizi geliştirmek için çerezler kullanıyoruz. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz, ancak bu durumda bazı özellikler düzgün çalışmayabilir.
-            </p>
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1D3557; margin: 30px 0 20px; font-size: 22px;">🍪 Çerezler (Cookies)</h3>
+                <p style="color: #333; line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                    Web sitemizde deneyiminizi geliştirmek için çerezler kullanıyoruz. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz, ancak bu durumda bazı özellikler düzgün çalışmayabilir.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1D3557; margin: 30px 0 20px; font-size: 22px;">🔄 Bilgi Paylaşımı</h3>
+                <p style="color: #333; line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                    Kişisel bilgilerinizi üçüncü taraflarla paylaşmayız. Yalnızca yasal zorunluluklar doğrultusunda yetkili kurumlara bilgi verilebilir.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1D3557; margin: 30px 0 20px; font-size: 22px;">📧 İletişim</h3>
+                <p style="color: #333; line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
+                    Gizlilik politikamız hakkında sorularınız varsa bizimle iletişime geçebilirsiniz. Gizlilik haklarınızı kullanmak için aşağıdaki iletişim bilgilerini kullanabilirsiniz.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid #eee;">
+                <a href="tel:+905555555555" style="display: inline-block; background-color: #1D3557; color: white; padding: 15px 40px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: bold; transition: background-color 0.3s;">📞 7/24 Hizmetinizdeyiz</a>
+            </div>
         </div>
     </main>
 
-    <footer style="background-color: #1D3557; padding: 40px 0; margin-top: 50px; border-top: 1px solid #ffffff;">
+    <footer style="background-color: #1D3557; padding: 40px 0; margin-top: 50px;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
-                <div style="flex: 1;">
-                    <h3 style="color: white; margin-bottom: 20px;">Navigasyon</h3>
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="margin-bottom: 10px;"><a href="main.html" style="color: white; text-decoration: none; display: inline;">Ana Sayfa</a></div>
-                        <div style="margin-bottom: 10px;"><a href="hizmetler.html" style="color: white; text-decoration: none; display: inline;">Hizmetler</a></div>
-                        <div style="margin-bottom: 10px;"><a href="hakkimizda.html" style="color: white; text-decoration: none; display: inline;">Hakkımızda</a></div>
-                        <div style="margin-bottom: 10px;"><a href="iletisim.html" style="color: white; text-decoration: none; display: inline;">İletişim</a></div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">🧭 Navigasyon</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="main.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🏠 Ana Sayfa</a>
+                        <a href="hizmetler.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔧 Hizmetler</a>
+                        <a href="hakkimizda.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">ℹ️ Hakkımızda</a>
+                        <a href="iletisim.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">📞 İletişim</a>
                     </div>
                 </div>
-                <div style="flex: 1;">
-                    <h3 style="color: white; margin-bottom: 20px;">Yasal</h3>
-                    <div style="display: flex; flex-direction: column;">
-                        <div style="margin-bottom: 10px;"><a href="kvkk.html" style="color: white; text-decoration: none; display: inline;">KVKK</a></div>
-                        <div style="margin-bottom: 10px;"><a href="gizlilik-politikasi.html" style="color: white; text-decoration: none; display: inline;">Gizlilik Politikası</a></div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">🔧 Hizmetler</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="hizmetleralt/beyazesya.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🏠 Beyaz Eşya Servisi</a>
+                        <a href="hizmetleralt/buzdolabi.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">❄️ Buzdolabı Servisi</a>
+                        <a href="hizmetleralt/camasir.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">👕 Çamaşır Makinesi Servisi</a>
+                        <a href="hizmetleralt/bulasik.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🍽️ Bulaşık Makinesi Servisi</a>
+                        <a href="hizmetleralt/firin.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔥 Fırın Servisi</a>
+                        <a href="hizmetleralt/klima.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">❄️ Klima Servisi</a>
+                        <a href="hizmetleralt/kombi.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔥 Kombi Servisi</a>
+                        <a href="hizmetleralt/televizyon.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">📺 Televizyon Servisi</a>
                     </div>
                 </div>
-                <div style="flex: 2;">
-                    <h3 style="color: white; margin-bottom: 20px;">Önemli Bilgilendirme</h3>
-                    <p style="color: white; line-height: 1.6;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">⚖️ Yasal</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="kvkk.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">📋 KVKK</a>
+                        <a href="gizlilik-politikasi.html" style="color: #E9C46A; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#E9C46A'">🔒 Gizlilik Politikası</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">⚠️ Önemli Bilgilendirme</h3>
+                    <p style="color: #E9C46A; line-height: 1.6; font-size: 14px;">
                         Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
                         Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
                     </p>
                 </div>
             </div>
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #ffffff;">
-                <p style="color: white; margin: 0;">© 2025 Beyaz Esya. Tüm hakları saklıdır.</p>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #E9C46A;">
+                <p style="color: white; margin: 0; font-size: 14px;">© 2025 Beyaz Esya Teknik Servis. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
