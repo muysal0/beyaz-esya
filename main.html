@@ -14,227 +14,63 @@
     <title>Beyaz Eşya Teknik Servis - 7/24 Hizmet, 1 Yıl Garanti</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Kritik CSS - Above the fold */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-            letter-spacing: -0.01em;
-            background-color: #263238;
-            margin: 0;
-        }
-        
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #1A1A1A;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .menu-icon { display: none; }
-        .nav-links { display: flex; }
-        
-        main {
-            background-color: #263238;
-            padding: 120px 0 60px 0;
-        }
-        
-        .hero-section {
-            text-align: center;
-            margin-bottom: 50px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .service-box {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            text-align: center;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
-    <style>
-        /* Non-critical CSS - Asenkron yükleme */
-        /* Font yüklendikten sonra Inter font aktif olacak */
-        .font-loaded body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        
-        @media (max-width: 768px) {
-            .menu-icon { 
-                display: block;
-                font-size: 24px;
-                cursor: pointer;    
-            }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                background-color: #1A1A1A;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-                padding: 10px 0;
-            }
-            .nav-links a {
-                padding: 15px 0;
-                width: 100%;
-                text-align: center;
-            }
-            .nav-links:target {
-                display: flex;
-            }
-            main {
-                padding: 100px 0 60px 0 !important;
-            }
-            .service-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-                grid-template-rows: repeat(2, 1fr) !important;
-                gap: 5px !important;
-            }
-            .service-box {
-                padding: 8px !important;
-                min-height: 80px !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: center !important;
-                align-items: center !important;
-            }
-            .service-box div {
-                font-size: 24px !important;
-                margin-bottom: 8px !important;
-                margin-top: 0 !important;
-            }
-            .service-box h3 {
-                font-size: 12px !important;
-                margin-bottom: 0 !important;
-                margin-top: 0 !important;
-                line-height: 1.1 !important;
-                word-wrap: break-word !important;
-                overflow-wrap: break-word !important;
-                hyphens: auto !important;
-                text-align: center !important;
-            }
-            .hero-section {
-                padding: 20px !important;
-                margin-bottom: 30px !important;
-            }
-            .hero-section h1 {
-                font-size: 24px !important;
-                margin-bottom: 15px !important;
-            }
-            .hero-section p {
-                font-size: 14px !important;
-                line-height: 1.4 !important;
-            }
-            .hero-section > div:last-child > div {
-                flex-direction: column !important;
-                gap: 15px !important;
-                align-items: center !important;
-            }
-            .hero-section > div:last-child > div > div:first-child {
-                gap: 5px !important;
-            }
-            .hero-section > div:last-child > div > div:first-child > div {
-                gap: 3px !important;
-            }
-            .hero-section > div:last-child > div > div:first-child > div > span {
-                font-size: 20px !important;
-            }
-            .hero-section > div:last-child > div > div:first-child > span {
-                font-size: 18px !important;
-            }
-            .hero-section > div:last-child > div > div:last-child {
-                font-size: 14px !important;
-                text-align: center !important;
-            }
-            .call-button-mobile {
-                position: fixed !important;
-                bottom: 20px !important;
-                right: 20px !important;
-                left: 20px !important;
-                width: auto !important;
-                z-index: 1000 !important;
-                padding: 15px 30px !important;
-                background: #2E7D32 !important;
-            }
-            .call-button-mobile span {
-                font-size: 24px !important;
-                color: white !important;
-            }
-            .call-button-mobile span span {
-                font-size: 24px !important;
-                margin-right: 8px !important;
-            }
-            .big-call-button {
-                padding: 30px 40px !important;
-                margin: 20px 10px !important;
-            }
-            .big-call-button span {
-                font-size: 24px !important;
-            }
-            .big-call-button span span {
-                font-size: 30px !important;
-                margin-right: 10px !important;
-            }
-            .call-button {
-                padding: 25px 50px !important;
-            }
-            .call-button span {
-                font-size: 24px !important;
-            }
-            .call-button span span {
-                margin-right: 10px !important;
-            }
-            footer div div {
-                grid-template-columns: 1fr !important;
-                text-align: center !important;
-            }
-            footer div div div {
-                margin-bottom: 30px !important;
-            }
-            footer div div div h3 {
-                text-align: center !important;
-            }
-            footer div div div div {
-                align-items: center !important;
-            }
-            footer div div div p {
-                text-align: center !important;
-            }
-        }
+        /* Kritik CSS - Minimal above the fold */
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-weight:400;line-height:1.6;letter-spacing:-0.01em;background:#263238;margin:0}
+        header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px;background:#1A1A1A;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+        .menu-icon{display:none}
+        .nav-links{display:flex}
+        main{background:#263238;padding:120px 0 60px 0}
+        .hero-section{text-align:center;margin-bottom:50px;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:20px;padding:40px;border:1px solid rgba(255,255,255,0.3)}
     </style>
     <script>
-        // Font yükleme optimizasyonu
+        // Asenkron CSS yükleme
+        function loadDeferredCSS() {
+            const css = `
+                @media (max-width: 768px) {
+                    .menu-icon { display: block; font-size: 24px; cursor: pointer; }
+                    .nav-links { display: none; position: absolute; top: 70px; right: 0; background: #1A1A1A; width: 100%; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 0; }
+                    .nav-links a { padding: 15px 0; width: 100%; text-align: center; }
+                    .nav-links:target { display: flex; }
+                    main { padding: 100px 0 60px 0 !important; }
+                    .service-grid { grid-template-columns: repeat(3, 1fr) !important; grid-template-rows: repeat(2, 1fr) !important; gap: 5px !important; }
+                    .service-box { padding: 8px !important; min-height: 80px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
+                    .service-box div { font-size: 24px !important; margin-bottom: 8px !important; margin-top: 0 !important; }
+                    .service-box h4 { font-size: 12px !important; margin-bottom: 0 !important; margin-top: 0 !important; line-height: 1.1 !important; word-wrap: break-word !important; overflow-wrap: break-word !important; hyphens: auto !important; text-align: center !important; }
+                    .hero-section { padding: 20px !important; margin-bottom: 30px !important; }
+                    .hero-section h1 { font-size: 24px !important; margin-bottom: 15px !important; }
+                    .hero-section p { font-size: 14px !important; line-height: 1.4 !important; }
+                    .call-button { padding: 25px 50px !important; }
+                    .call-button span { font-size: 24px !important; }
+                    footer div div { grid-template-columns: 1fr !important; text-align: center !important; }
+                    footer div div div { margin-bottom: 30px !important; }
+                    footer div div div h2 { text-align: center !important; }
+                    footer div div div div { align-items: center !important; }
+                    footer div div div p { text-align: center !important; }
+                }
+                .font-loaded body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+            `;
+            const style = document.createElement('style');
+            style.textContent = css;
+            document.head.appendChild(style);
+        }
+
+        // Font ve CSS yükleme optimizasyonu
         if ('fonts' in document) {
             document.fonts.ready.then(function() {
                 document.documentElement.classList.add('font-loaded');
+                loadDeferredCSS();
             });
+        } else {
+            setTimeout(function() {
+                document.documentElement.classList.add('font-loaded');
+                loadDeferredCSS();
+            }, 100);
         }
+
+        // Sayfa yüklendikten sonra çalıştır
+        window.addEventListener('load', loadDeferredCSS);
     </script>
 </head>
 <body>
@@ -290,36 +126,36 @@
                 </a>
             </div>
             
-            <div class="service-grid">
+            <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 20px;">
                 <!-- 7/24 Hizmet -->
-                <div class="service-box">
+                <div class="service-box" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.3); text-align: center;">
                     <div style="font-size: 30px; color: #FFC107; margin-bottom: 10px;">⏰</div>
-                    <h3 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">7/24 Hizmet</h3>
+                    <h4 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">7/24 Hizmet</h4>
                 </div>
                 <!-- 1 Yıl Garanti -->
-                <div class="service-box">
+                <div class="service-box" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.3); text-align: center;">
                     <div style="font-size: 30px; color: #FFC107; margin-bottom: 10px;">🛡️</div>
-                    <h3 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">1 Yıl Garanti</h3>
+                    <h4 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">1 Yıl Garanti</h4>
                 </div>
                 <!-- 20 Dakika -->
-                <div class="service-box">
+                <div class="service-box" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.3); text-align: center;">
                     <div style="font-size: 30px; color: #FFC107; margin-bottom: 10px;">⚡</div>
-                    <h3 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">20 Dakikada Yanınızda</h3>
+                    <h4 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">20 Dakikada Yanınızda</h4>
                 </div>
                 <!-- %100 Müşteri Memnuniyeti -->
-                <div class="service-box">
+                <div class="service-box" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.3); text-align: center;">
                     <div style="font-size: 30px; color: #FFC107; margin-bottom: 10px;">👑</div>
-                    <h3 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Müşteri Memnuniyeti</h3>
+                    <h4 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Müşteri Memnuniyeti</h4>
                 </div>
                 <!-- Ekonomik -->
                 <div class="service-box" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2); text-align: center;">
                     <div style="font-size: 30px; color: #FFC107; margin-bottom: 10px;">�</div>
-                    <h3 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Ekonomik</h3>
+                    <h4 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Ekonomik</h4>
                 </div>
                 <!-- %100 Güvenilir -->
-                <div class="service-box">
+                <div class="service-box" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.3); text-align: center;">
                     <div style="font-size: 30px; color: #FFC107; margin-bottom: 10px;">🏆</div>
-                    <h3 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Güvenilir</h3>
+                    <h4 style="color: white; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Güvenilir</h4>
                 </div>
             </div>
         </div>
@@ -329,7 +165,7 @@
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Navigasyon</h3>
+                    <h2 style="color: white; margin-bottom: 20px; font-size: 20px;">Navigasyon</h2>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         <a href="main.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Ana Sayfa</a>
                         <a href="hizmetler.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Hizmetler</a>
@@ -338,7 +174,7 @@
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Hizmetler</h3>
+                    <h2 style="color: white; margin-bottom: 20px; font-size: 20px;">Hizmetler</h2>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         <a href="hizmetleralt/beyazesya.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Beyaz Eşya Servisi</a>
                         <a href="hizmetleralt/buzdolabi.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Buzdolabı Servisi</a>
@@ -351,14 +187,14 @@
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Yasal</h3>
+                    <h2 style="color: white; margin-bottom: 20px; font-size: 20px;">Yasal</h2>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         <a href="kvkk.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">KVKK</a>
                         <a href="gizlilik-politikasi.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Gizlilik Politikası</a>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Önemli Bilgilendirme</h3>
+                    <h2 style="color: white; margin-bottom: 20px; font-size: 20px;">Önemli Bilgilendirme</h2>
                     <p style="color: #FFC107; line-height: 1.6; font-size: 14px;">
                         Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
                         Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
