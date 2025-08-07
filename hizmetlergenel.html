@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -141,6 +141,102 @@
             }
         }
     </style>
+    <script>
+        // Dinamik hizmet verileri
+        const serviceData = {
+            'beyazesya': {
+                title: 'Beyaz Eşya Servisi',
+                description: 'Tüm beyaz eşya markalarının garantisi dolmuş ürünleri için profesyonel tamir ve bakım hizmetleri sunuyoruz. Deneyimli teknisyen ekibimizle, buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın ve diğer beyaz eşyalarınızın arızalarını hızlı ve güvenilir bir şekilde çözüyoruz.',
+                metaTitle: 'Beyaz Eşya Servisi - Profesyonel Tamir Hizmeti',
+                metaDescription: 'Profesyonel beyaz eşya servisi. Tüm marka beyaz eşya cihazları için uzman tamir hizmeti. 7/24 hizmet, 1 yıl garanti, ekonomik fiyatlar.'
+            },
+            'buzdolabi': {
+                title: 'Buzdolabı Servisi',
+                description: 'Buzdolabınızın arızalarını profesyonel ekibimizle çözüyoruz. Soğutmama, dondurmama, gürültü, termostat arızaları ve tüm buzdolabı problemleri için hızlı ve güvenilir servis hizmeti. Orijinal yedek parçalarla kaliteli tamir.',
+                metaTitle: 'Buzdolabı Servisi - Hızlı ve Güvenilir Tamir',
+                metaDescription: 'Buzdolabı tamiri ve servisi. Soğutmama, termostat arızaları, kompresör değişimi. Tüm marka buzdolapları için profesyonel tamir hizmeti.'
+            },
+            'camasir': {
+                title: 'Çamaşır Makinesi Servisi',
+                description: 'Çamaşır makinenizin tüm arızaları için uzman servis hizmeti. Su almama, sıkma, motor arızaları, kapak kilidi problemleri ve diğer tüm arızalar için profesyonel çözümler. Aynı gün servis imkanı.',
+                metaTitle: 'Çamaşır Makinesi Servisi - Uzman Tamir',
+                metaDescription: 'Çamaşır makinesi tamiri ve servisi. Motor, pompa, kapak kilidi arızaları. Tüm marka çamaşır makineleri için hızlı çözüm.'
+            },
+            'bulasik': {
+                title: 'Bulaşık Makinesi Servisi',
+                description: 'Bulaşık makinenizin su almama, yıkamama, kurutmama gibi arızalarını çözüyoruz. Pompa değişimi, filtre temizliği, elektronik kart tamiri gibi tüm servis hizmetleri için uzman kadromuzla yanınızdayız.',
+                metaTitle: 'Bulaşık Makinesi Servisi - Profesyonel Tamir',
+                metaDescription: 'Bulaşık makinesi tamiri ve servisi. Su almama, pompa arızaları, kurutmama problemleri. Uzman teknisyenlerle kaliteli hizmet.'
+            },
+            'firin': {
+                title: 'Fırın Servisi',
+                description: 'Fırınınızın ısıtmama, elektronik arızaları, rezistans değişimi gibi problemleri için profesyonel servis. Ankastre ve müstakil fırınlar için uzman tamir hizmeti. Orijinal yedek parçalarla güvenilir çözümler.',
+                metaTitle: 'Fırın Servisi - Rezistans ve Elektronik Tamir',
+                metaDescription: 'Fırın tamiri ve servisi. Rezistans değişimi, termostat arızaları, elektronik kart tamiri. Tüm marka fırınlar için profesyonel hizmet.'
+            },
+            'klima': {
+                title: 'Klima Servisi',
+                description: 'Klima cihazınızın soğutmama, ısıtmama, gaz kaçağı gibi problemleri için uzman servis. Gaz dolumu, filtre temizliği, motor tamiri ve tüm klima arızaları için profesyonel çözümler sunuyoruz.',
+                metaTitle: 'Klima Servisi - Soğutma ve Isıtma Tamiri',
+                metaDescription: 'Klima tamiri ve servisi. Gaz dolumu, soğutmama problemleri, motor arızaları. Split ve salon tipi klimalar için uzman hizmet.'
+            },
+            'kombi': {
+                title: 'Kombi Servisi',
+                description: 'Kombi cihazınızın ısıtmama, sıcak su vermeme, yanmama gibi arızaları için uzman servis. Bakım, onarım ve yedek parça değişimi ile kombilerinizi güvenli şekilde çalıştırıyoruz.',
+                metaTitle: 'Kombi Servisi - Isıtma ve Sıcak Su Tamiri',
+                metaDescription: 'Kombi tamiri ve servisi. Isıtmama, sıcak su problemleri, yanıcı değişimi. Tüm marka kombiler için güvenilir hizmet.'
+            },
+            'televizyon': {
+                title: 'Televizyon Servisi',
+                description: 'Televizyonunuzun görüntü problemi, ses sorunu, açılmama gibi arızaları için profesyonel tamir hizmeti. LCD, LED, OLED televizyonlar için uzman servis. Anakart tamiri ve ekran değişimi.',
+                metaTitle: 'Televizyon Servisi - Görüntü ve Ses Tamiri',
+                metaDescription: 'Televizyon tamiri ve servisi. Görüntü problemleri, ses arızaları, anakart tamiri. LCD, LED, OLED TV\'ler için uzman hizmet.'
+            }
+        };
+
+        // Sayfa yüklendiğinde URL parametresine göre içeriği güncelle
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+            
+            if (service && serviceData[service]) {
+                const data = serviceData[service];
+                
+                // Sayfa başlığını güncelle
+                document.title = data.metaTitle;
+                
+                // Meta description güncelle
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.setAttribute('content', data.metaDescription);
+                }
+                
+                // OG title güncelle
+                const ogTitle = document.querySelector('meta[property="og:title"]');
+                if (ogTitle) {
+                    ogTitle.setAttribute('content', data.metaTitle);
+                }
+                
+                // OG description güncelle
+                const ogDesc = document.querySelector('meta[property="og:description"]');
+                if (ogDesc) {
+                    ogDesc.setAttribute('content', data.metaDescription);
+                }
+                
+                // İçerik başlığını güncelle
+                const contentTitle = document.querySelector('.white-content-box h1');
+                if (contentTitle) {
+                    contentTitle.textContent = data.title;
+                }
+                
+                // İçerik açıklamasını güncelle
+                const contentDesc = document.querySelector('.white-content-box p');
+                if (contentDesc) {
+                    contentDesc.textContent = data.description;
+                }
+            }
+        });
+    </script>
 </head>
 <body style="background-color: #37474F; margin: 0;">
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #1D3557; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
@@ -430,47 +526,47 @@
             </div>
     </main>
 
-    <footer style="background-color: #1D3557; padding: 40px 0; margin-top: 50px;">
+    <footer style="background-color: #212529; padding: 40px 0; margin-top: 50px;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Navigasyon</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="../main.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Ana Sayfa</a>
-                        <a href="../hizmetler.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Hizmetler</a>
-                        <a href="../hakkimizda.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Hakkımızda</a>
-                        <a href="../iletisim.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">İletişim</a>
+                        <a href="main.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Ana Sayfa</a>
+                        <a href="hizmetler.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Hizmetler</a>
+                        <a href="hakkimizda.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Hakkımızda</a>
+                        <a href="iletisim.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">İletişim</a>
                     </div>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Hizmetler</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="beyazesya.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Beyaz Eşya Servisi</a>
-                        <a href="buzdolabi.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Buzdolabı Servisi</a>
-                        <a href="camasir.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Çamaşır Makinesi Servisi</a>
-                        <a href="bulasik.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Bulaşık Makinesi Servisi</a>
-                        <a href="firin.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Fırın Servisi</a>
-                        <a href="klima.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Klima Servisi</a>
-                        <a href="kombi.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Kombi Servisi</a>
-                        <a href="televizyon.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Televizyon Servisi</a>
+                        <a href="hizmetlergenel.html?service=beyazesya" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Beyaz Eşya Servisi</a>
+                        <a href="hizmetlergenel.html?service=buzdolabi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Buzdolabı Servisi</a>
+                        <a href="hizmetlergenel.html?service=camasir" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Çamaşır Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=bulasik" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Bulaşık Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=firin" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Fırın Servisi</a>
+                        <a href="hizmetlergenel.html?service=klima" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Klima Servisi</a>
+                        <a href="hizmetlergenel.html?service=kombi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Kombi Servisi</a>
+                        <a href="hizmetlergenel.html?service=televizyon" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Televizyon Servisi</a>
                     </div>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Yasal</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="../kvkk.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">KVKK</a>
-                        <a href="../gizlilik-politikasi.html" style="color: #FFC107; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#FFC107'">Gizlilik Politikası</a>
+                        <a href="kvkk.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">KVKK</a>
+                        <a href="gizlilik-politikasi.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Gizlilik Politikası</a>
                     </div>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Önemli Bilgilendirme</h3>
-                    <p style="color: #FFC107; line-height: 1.6; font-size: 14px;">
+                    <p style="color: #ADB5BD; line-height: 1.6; font-size: 14px;">
                         Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
                         Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
                     </p>
                 </div>
             </div>
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #FFC107;">
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #0D6EFD;">
                 <p style="color: white; margin: 0; font-size: 14px;">© 2025 Beyaz Esya Teknik Servis. Tüm hakları saklıdır.</p>
             </div>
         </div>

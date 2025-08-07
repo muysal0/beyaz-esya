@@ -71,142 +71,6 @@
 
         // Sayfa yüklendikten sonra çalıştır
         window.addEventListener('load', loadDeferredCSS);
-
-        // Dinamik Hizmet Sayfası Fonksiyonları
-        function getServiceFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const service = urlParams.get('service');
-            return service ? decodeURIComponent(service.replace(/\+/g, ' ')) : null;
-        }
-
-        function updatePageContent() {
-            const serviceName = getServiceFromURL();
-            
-            if (serviceName) {
-                // Hizmet bilgileri veritabanı
-                const serviceInfo = {
-                    'Beyaz Eşya Servisi': {
-                        title: 'Beyaz Eşya Servisi',
-                        description: 'Tüm marka beyaz eşyalarınızın profesyonel tamiri. Buzdolabı, çamaşır makinesi, bulaşık makinesi ve daha fazlası.',
-                        keywords: 'beyaz eşya tamiri, beyaz eşya servisi, profesyonel tamir',
-                        content: 'Beyaz eşyalarınızın arızalarını profesyonel ekibimizle çözüyoruz. 20 yıllık deneyim, 1 yıl garanti.'
-                    },
-                    'Buzdolabı Servisi': {
-                        title: 'Buzdolabı Servisi',
-                        description: 'Buzdolabı tamiri ve bakımı. Soğutmuyor, buzlanma, ses sorunu gibi tüm arızalar için profesyonel çözüm.',
-                        keywords: 'buzdolabı tamiri, buzdolabı servisi, buzdolabı arızası',
-                        content: 'Buzdolabınız soğutmuyor mu? Ses yapıyor mu? Tüm buzdolabı arızalarını profesyonelce çözüyoruz.'
-                    },
-                    'Çamaşır Makinesi Servisi': {
-                        title: 'Çamaşır Makinesi Servisi',
-                        description: 'Çamaşır makinesi tamiri. Su almıyor, çalışmıyor, sıkıyor gibi sorunlar için uzman teknik servis.',
-                        keywords: 'çamaşır makinesi tamiri, çamaşır makinesi servisi, çamaşır makinesi arızası',
-                        content: 'Çamaşır makineniz arızalı mı? Su almıyor, sıkıyor, çalışmıyor? Hemen arayın, sorununuzu çözelim.'
-                    },
-                    'Bulaşık Makinesi Servisi': {
-                        title: 'Bulaşık Makinesi Servisi',
-                        description: 'Bulaşık makinesi tamiri. Yıkamıyor, kurutmuyor, su akıtıyor gibi sorunlar için profesyonel hizmet.',
-                        keywords: 'bulaşık makinesi tamiri, bulaşık makinesi servisi, bulaşık makinesi arızası',
-                        content: 'Bulaşık makineniz yıkamıyor mu? Su akıtıyor mu? Tüm sorunlarınızı profesyonelce çözüyoruz.'
-                    },
-                    'Fırın Servisi': {
-                        title: 'Fırın Servisi',
-                        description: 'Fırın ve ankastre tamiri. Isıtmıyor, çalışmıyor, termostat arızası için uzman teknik servis.',
-                        keywords: 'fırın tamiri, fırın servisi, ankastre tamiri',
-                        content: 'Fırınınız ısıtmıyor mu? Termostat arızalı mı? Tüm fırın sorunlarınızı çözüyoruz.'
-                    },
-                    'Klima Servisi': {
-                        title: 'Klima Servisi',
-                        description: 'Klima tamiri ve bakımı. Soğutmuyor, çalışmıyor, ses yapıyor gibi sorunlar için profesyonel çözüm.',
-                        keywords: 'klima tamiri, klima servisi, klima bakımı',
-                        content: 'Klimanız soğutmuyor mu? Arızalı mı? Klima bakım ve tamir hizmetlerimizle yanınızdayız.'
-                    },
-                    'Kombi Servisi': {
-                        title: 'Kombi Servisi',
-                        description: 'Kombi tamiri ve bakımı. Çalışmıyor, su ısıtmıyor, basınç düşüyor gibi sorunlar için uzman servis.',
-                        keywords: 'kombi tamiri, kombi servisi, kombi bakımı',
-                        content: 'Kombiniz çalışmıyor mu? Su ısıtmıyor mu? Kombi arızalarınızı profesyonelce çözüyoruz.'
-                    },
-                    'Televizyon Servisi': {
-                        title: 'Televizyon Servisi',
-                        description: 'Televizyon tamiri. Açılmıyor, görüntü yok, ses sorunu gibi tüm TV arızaları için uzman servis.',
-                        keywords: 'televizyon tamiri, tv servisi, televizyon arızası',
-                        content: 'Televizyonunuz açılmıyor mu? Görüntü sorunu mu var? TV tamir hizmetlerimizle sorununuzu çözüyoruz.'
-                    }
-                };
-
-                const info = serviceInfo[serviceName];
-                
-                if (info) {
-                    // Sayfa başlığını güncelle
-                    document.title = `${info.title} - 7/24 Hizmet, 1 Yıl Garanti`;
-                    
-                    // Meta description güncelle
-                    const metaDesc = document.querySelector('meta[name="description"]');
-                    if (metaDesc) {
-                        metaDesc.setAttribute('content', info.description);
-                    }
-                    
-                    // Meta keywords güncelle
-                    const metaKeywords = document.querySelector('meta[name="keywords"]');
-                    if (metaKeywords) {
-                        metaKeywords.setAttribute('content', info.keywords);
-                    }
-                    
-                    // OG title güncelle
-                    const ogTitle = document.querySelector('meta[property="og:title"]');
-                    if (ogTitle) {
-                        ogTitle.setAttribute('content', `${info.title} - 7/24 Hizmet`);
-                    }
-                    
-                    // OG description güncelle
-                    const ogDesc = document.querySelector('meta[property="og:description"]');
-                    if (ogDesc) {
-                        ogDesc.setAttribute('content', info.description);
-                    }
-                    
-                    // Ana başlığı güncelle
-                    const mainTitle = document.querySelector('.hero-section h1');
-                    if (mainTitle) {
-                        mainTitle.textContent = `Profesyonel ${info.title}`;
-                    }
-                    
-                    // Ana açıklamayı güncelle
-                    const mainDesc = document.querySelector('.hero-section p');
-                    if (mainDesc) {
-                        mainDesc.textContent = info.content;
-                    }
-                    
-                    // Breadcrumb ekle
-                    addBreadcrumb(info.title);
-                }
-            }
-        }
-
-        function addBreadcrumb(serviceName) {
-            const heroSection = document.querySelector('.hero-section');
-            if (heroSection && !document.querySelector('.breadcrumb')) {
-                const breadcrumb = document.createElement('div');
-                breadcrumb.className = 'breadcrumb';
-                breadcrumb.style.cssText = `
-                    text-align: left;
-                    margin-bottom: 20px;
-                    font-size: 14px;
-                    color: #6C757D;
-                `;
-                breadcrumb.innerHTML = `
-                    <a href="main.html" style="color: #8B4513; text-decoration: none;">Ana Sayfa</a> 
-                    <span style="margin: 0 8px;">></span> 
-                    <span style="color: #212529; font-weight: 500;">${serviceName}</span>
-                `;
-                heroSection.insertBefore(breadcrumb, heroSection.firstChild);
-            }
-        }
-
-        // Sayfa yüklendiğinde çalıştır
-        document.addEventListener('DOMContentLoaded', function() {
-            updatePageContent();
-        });
     </script>
 </head>
 <body>
@@ -227,8 +91,8 @@
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <!-- Başlık ve Açıklama -->
             <div class="hero-section">
-                <h1 id="main-title" style="color: #212529; font-size: 48px; margin-bottom: 20px; text-shadow: none; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">Profesyonel Beyaz Eşya Servisi</h1>
-                <p id="main-description" style="color: #6C757D; font-size: 20px; line-height: 1.6; margin: 0; max-width: 800px; margin: 0 auto; font-weight: 500; letter-spacing: -0.005em;">
+                <h1 style="color: #212529; font-size: 48px; margin-bottom: 20px; text-shadow: none; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">Profesyonel Beyaz Eşya Servisi</h1>
+                <p style="color: #6C757D; font-size: 20px; line-height: 1.6; margin: 0; max-width: 800px; margin: 0 auto; font-weight: 500; letter-spacing: -0.005em;">
                     20 yıllık deneyimimizle tüm marka beyaz eşyalarınızın tamiri için 7/24 hizmetinizdeyiz. Kaliteli iş, güvenilir hizmet, ekonomik fiyatlar.
                 </p>
                 
@@ -264,35 +128,35 @@
             
             <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 20px;">
                 <!-- 7/24 Hizmet -->
-                <a href="main.html?service=Beyaz+Eşya+Servisi" class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                     <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🕒</div>
                     <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">7/24 Hizmet</h5>
-                </a>
+                </div>
                 <!-- 1 Yıl Garanti -->
-                <a href="main.html?service=Buzdolabı+Servisi" class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                     <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">💼</div>
-                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Buzdolabı Servisi</h5>
-                </a>
+                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">1 Yıl Garanti</h5>
+                </div>
                 <!-- 20 Dakika -->
-                <a href="main.html?service=Çamaşır+Makinesi+Servisi" class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                     <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🚚</div>
-                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Çamaşır Makinesi</h5>
-                </a>
+                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">20 Dakikada Yanınızda</h5>
+                </div>
                 <!-- %100 Müşteri Memnuniyeti -->
-                <a href="main.html?service=Bulaşık+Makinesi+Servisi" class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                     <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🤝</div>
-                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Bulaşık Makinesi</h5>
-                </a>
+                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Müşteri Memnuniyeti</h5>
+                </div>
                 <!-- Ekonomik -->
-                <a href="main.html?service=Klima+Servisi" class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                     <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">💸</div>
-                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Klima Servisi</h5>
-                </a>
+                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Ekonomik</h5>
+                </div>
                 <!-- %100 Güvenilir -->
-                <a href="main.html?service=Televizyon+Servisi" class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'">
+                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                     <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🔐</div>
-                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">TV Servisi</h5>
-                </a>
+                    <h5 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Güvenilir</h5>
+                </div>
             </div>
         </div>
     </main>
@@ -312,14 +176,14 @@
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Hizmetler</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="main.html?service=Beyaz+Eşya+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Beyaz Eşya Servisi</a>
-                        <a href="main.html?service=Buzdolabı+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Buzdolabı Servisi</a>
-                        <a href="main.html?service=Çamaşır+Makinesi+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Çamaşır Makinesi Servisi</a>
-                        <a href="main.html?service=Bulaşık+Makinesi+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Bulaşık Makinesi Servisi</a>
-                        <a href="main.html?service=Fırın+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Fırın Servisi</a>
-                        <a href="main.html?service=Klima+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Klima Servisi</a>
-                        <a href="main.html?service=Kombi+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Kombi Servisi</a>
-                        <a href="main.html?service=Televizyon+Servisi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Televizyon Servisi</a>
+                        <a href="hizmetlergenel.html?service=beyazesya" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Beyaz Eşya Servisi</a>
+                        <a href="hizmetlergenel.html?service=buzdolabi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Buzdolabı Servisi</a>
+                        <a href="hizmetlergenel.html?service=camasir" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Çamaşır Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=bulasik" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Bulaşık Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=firin" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Fırın Servisi</a>
+                        <a href="hizmetlergenel.html?service=klima" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Klima Servisi</a>
+                        <a href="hizmetlergenel.html?service=kombi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Kombi Servisi</a>
+                        <a href="hizmetlergenel.html?service=televizyon" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Televizyon Servisi</a>
                     </div>
                 </div>
                 <div>
