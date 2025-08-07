@@ -12,87 +12,95 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <title>Beyaz Eşya Teknik Servis - 7/24 Hizmet, 1 Yıl Garanti</title>
+    <!-- Kritik kaynaklar için preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"></noscript>
     <style>
-        /* Kritik CSS - Minimal above the fold */
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-weight:400;line-height:1.6;letter-spacing:-0.01em;background:#F8F9FA;margin:0}
+        /* Kritik CSS - Genişletilmiş above the fold optimizasyonu */
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-weight:400;line-height:1.6;letter-spacing:-0.01em;background:#F8F9FA;margin:0;font-display:swap}
         header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px;background:#37474F;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
-        .menu-icon{display:none}
+        header a{font-size:30px;color:white;margin-left:15px;text-decoration:none;font-weight:800;letter-spacing:-0.02em}
+        .menu-icon{display:none;font-size:24px;cursor:pointer;text-decoration:none;color:white}
         .nav-links{display:flex}
-        main{background:#F8F9FA;padding:120px 0 60px 0}
+        .nav-links a{text-decoration:none;color:white;margin:0 15px;font-size:18px;font-weight:500;letter-spacing:-0.005em}
+        main{background:#F8F9FA;padding:120px 0 60px 0;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
         .hero-section{text-align:center;margin-bottom:50px;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-radius:20px;padding:40px;border:1px solid rgba(13,110,253,0.2);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+        .hero-section h1{color:#212529;font-size:48px;margin-bottom:20px;text-shadow:none;font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+        .hero-section p{color:#495057;font-size:20px;line-height:1.6;margin:0;max-width:800px;margin:0 auto;font-weight:500;letter-spacing:-0.005em}
+        .call-button{display:inline-block;background:#0D6EFD;padding:40px 80px;border-radius:20px;box-shadow:0 4px 8px rgba(13,110,253,0.2);text-decoration:none}
+        .call-button span{color:white;font-size:40px;font-weight:700;letter-spacing:-0.01em}
+        .service-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:20px}
+        .service-box{background:white;padding:20px;border-radius:15px;border:1px solid rgba(13,110,253,0.15);text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+        .service-box div{font-size:30px;color:#0D6EFD;margin-bottom:10px}
+        .service-box h2{color:#212529;margin-bottom:5px;font-size:16px;font-weight:600;letter-spacing:-0.005em}
+        footer{background-color:#37474F;padding:40px 0;margin-top:50px}
+        footer h3{color:white;margin-bottom:20px;font-size:20px}
+        footer a{color:#CED4DA;text-decoration:none;font-size:16px;transition:color 0.3s}
+        footer a:hover{color:white}
+        footer p{color:#CED4DA;line-height:1.6;font-size:14px}
+        
+        /* Mobil CSS - Kritik stilleri buraya taşıdık */
+        @media (max-width: 768px) {
+            .menu-icon { display: block; }
+            .nav-links { display: none; position: absolute; top: 70px; right: 0; background: #37474F; width: 100%; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 0; }
+            .nav-links a { padding: 15px 0; width: 100%; text-align: center; margin: 0; }
+            .nav-links:target { display: flex; }
+            main { padding: 100px 20px 60px 20px !important; }
+            .service-grid { grid-template-columns: repeat(3, 1fr) !important; grid-template-rows: repeat(2, 1fr) !important; gap: 5px !important; }
+            .service-box { padding: 8px !important; min-height: 80px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
+            .service-box div { font-size: 24px !important; margin-bottom: 8px !important; margin-top: 0 !important; }
+            .service-box h2 { font-size: 12px !important; margin-bottom: 0 !important; margin-top: 0 !important; line-height: 1.1 !important; word-wrap: break-word !important; overflow-wrap: break-word !important; hyphens: auto !important; text-align: center !important; }
+            .hero-section { padding: 20px !important; margin-bottom: 30px !important; }
+            .hero-section h1 { font-size: 24px !important; margin-bottom: 15px !important; }
+            .hero-section p { font-size: 14px !important; line-height: 1.4 !important; }
+            .call-button { padding: 25px 50px !important; }
+            .call-button span { font-size: 24px !important; }
+            footer > div > div { grid-template-columns: 1fr !important; text-align: center !important; }
+            footer > div > div > div { margin-bottom: 30px !important; }
+        }
+        
+        /* Font yüklendi sınıfı */
+        .font-loaded body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
     </style>
     <script>
-        // Asenkron CSS yükleme
-        function loadDeferredCSS() {
-            const css = `
-                @media (max-width: 768px) {
-                    .menu-icon { display: block; font-size: 24px; cursor: pointer; }
-                    .nav-links { display: none; position: absolute; top: 70px; right: 0; background: #37474F; width: 100%; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 0; }
-                    .nav-links a { padding: 15px 0; width: 100%; text-align: center; }
-                    .nav-links:target { display: flex; }
-                    main { padding: 100px 0 60px 0 !important; }
-                    .service-grid { grid-template-columns: repeat(3, 1fr) !important; grid-template-rows: repeat(2, 1fr) !important; gap: 5px !important; }
-                    .service-box { padding: 8px !important; min-height: 80px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
-                    .service-box div { font-size: 24px !important; margin-bottom: 8px !important; margin-top: 0 !important; }
-                    .service-box h2 { font-size: 12px !important; margin-bottom: 0 !important; margin-top: 0 !important; line-height: 1.1 !important; word-wrap: break-word !important; overflow-wrap: break-word !important; hyphens: auto !important; text-align: center !important; }
-                    .hero-section { padding: 20px !important; margin-bottom: 30px !important; }
-                    .hero-section h1 { font-size: 24px !important; margin-bottom: 15px !important; }
-                    .hero-section p { font-size: 14px !important; line-height: 1.4 !important; }
-                    .call-button { padding: 25px 50px !important; }
-                    .call-button span { font-size: 24px !important; }
-                    footer div div { grid-template-columns: 1fr !important; text-align: center !important; }
-                    footer div div div { margin-bottom: 30px !important; }
-                    footer div div div h3 { text-align: center !important; }
-                    footer div div div div { align-items: center !important; }
-                    footer div div div p { text-align: center !important; }
-                }
-                .font-loaded body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-            `;
-            const style = document.createElement('style');
-            style.textContent = css;
-            document.head.appendChild(style);
-        }
-
-        // Font ve CSS yükleme optimizasyonu
-        if ('fonts' in document) {
-            document.fonts.ready.then(function() {
-                document.documentElement.classList.add('font-loaded');
-                loadDeferredCSS();
-            });
-        } else {
-            setTimeout(function() {
-                document.documentElement.classList.add('font-loaded');
-                loadDeferredCSS();
-            }, 100);
-        }
-
-        // Sayfa yüklendikten sonra çalıştır
-        window.addEventListener('load', loadDeferredCSS);
+        // Font yükleme optimizasyonu
+        (function() {
+            // Font yükleme kontrolü
+            if ('fonts' in document) {
+                document.fonts.ready.then(() => {
+                    document.documentElement.classList.add('font-loaded');
+                });
+            } else {
+                // Eski tarayıcılar için fallback
+                setTimeout(() => {
+                    document.documentElement.classList.add('font-loaded');
+                }, 100);
+            }
+        })();
     </script>
 </head>
 <body>
     <header>
         <div>
-            <a href="main.html" style="font-size: 30px; color: white; margin-left: 15px; text-decoration: none; font-weight: 800; letter-spacing: -0.02em;">Beyaz Eşya</a>
+            <a href="main.html">Beyaz Eşya</a>
         </div>
-        <a href="#nav-links" class="menu-icon" style="text-decoration: none; color: white;">☰</a>
+        <a href="#nav-links" class="menu-icon">☰</a>
         <nav class="nav-links" id="nav-links">
-            <a href="main.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 600; letter-spacing: -0.005em;">Ana Sayfa</a>
-            <a href="hizmetler.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 500; letter-spacing: -0.005em;">Hizmetler</a>
-            <a href="hakkimizda.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 500; letter-spacing: -0.005em;">Hakkımızda</a>
-            <a href="iletisim.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 500; letter-spacing: -0.005em;">İletişim</a>
+            <a href="main.html" style="font-weight: 600;">Ana Sayfa</a>
+            <a href="hizmetler.html">Hizmetler</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
         </nav>
     </header>
     
     <main>
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <!-- Başlık ve Açıklama -->
             <div class="hero-section">
-                <h1 style="color: #212529; font-size: 48px; margin-bottom: 20px; text-shadow: none; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">Profesyonel Beyaz Eşya Servisi</h1>
-                <p style="color: #495057; font-size: 20px; line-height: 1.6; margin: 0; max-width: 800px; margin: 0 auto; font-weight: 500; letter-spacing: -0.005em;">
+                <h1>Profesyonel Beyaz Eşya Servisi</h1>
+                <p>
                     20 yıllık deneyimimizle tüm marka beyaz eşyalarınızın tamiri için 7/24 hizmetinizdeyiz. Kaliteli iş, güvenilir hizmet, ekonomik fiyatlar.
                 </p>
                 
@@ -121,81 +129,80 @@
             
             <!-- Hemen Ara Butonu -->
             <div style="text-align: center; margin-bottom: 50px;">
-                <a href="#" class="call-button" style="display: inline-block; background: #0D6EFD; padding: 40px 80px; border-radius: 20px; box-shadow: 0 4px 8px rgba(13,110,253,0.2); text-decoration: none;">
-                    <span style="color: white; font-size: 40px; font-weight: 700; letter-spacing: -0.01em;"><span style="margin-right: 15px;">📞</span>Hemen Ara</span>
+                <a href="#" class="call-button">
+                    <span><span style="margin-right: 15px;">📞</span>Hemen Ara</span>
                 </a>
             </div>
             
-            <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 20px;">
+            <div class="service-grid">
                 <!-- 7/24 Hizmet -->
-                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🕒</div>
-                    <h2 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">7/24 Hizmet</h2>
+                <div class="service-box">
+                    <div>🕒</div>
+                    <h2>7/24 Hizmet</h2>
                 </div>
                 <!-- 1 Yıl Garanti -->
-                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">💼</div>
-                    <h2 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">1 Yıl Garanti</h2>
+                <div class="service-box">
+                    <div>💼</div>
+                    <h2>1 Yıl Garanti</h2>
                 </div>
                 <!-- 20 Dakika -->
-                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🚚</div>
-                    <h2 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">20 Dakikada Yanınızda</h2>
+                <div class="service-box">
+                    <div>🚚</div>
+                    <h2>20 Dakikada Yanınızda</h2>
                 </div>
                 <!-- %100 Müşteri Memnuniyeti -->
-                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🤝</div>
-                    <h2 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Müşteri Memnuniyeti</h2>
+                <div class="service-box">
+                    <div>🤝</div>
+                    <h2>%100 Müşteri Memnuniyeti</h2>
                 </div>
                 <!-- Ekonomik -->
-                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">💸</div>
-                    <h2 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">Ekonomik</h2>
+                <div class="service-box">
+                    <div>💸</div>
+                    <h2>Ekonomik</h2>
                 </div>
                 <!-- %100 Güvenilir -->
-                <div class="service-box" style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(13,110,253,0.15); text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <div style="font-size: 30px; color: #0D6EFD; margin-bottom: 10px;">🔐</div>
-                    <h2 style="color: #212529; margin-bottom: 5px; font-size: 16px; font-weight: 600; letter-spacing: -0.005em;">%100 Güvenilir</h2>
+                <div class="service-box">
+                    <div>🔐</div>
+                    <h2>%100 Güvenilir</h2>
                 </div>
             </div>
-        </div>
     </main>
 
-    <footer style="background-color: #37474F; padding: 40px 0; margin-top: 50px;">
+    <footer>
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Navigasyon</h3>
+                    <h3>Navigasyon</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="main.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Ana Sayfa</a>
-                        <a href="hizmetler.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Hizmetler</a>
-                        <a href="hakkimizda.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Hakkımızda</a>
-                        <a href="iletisim.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">İletişim</a>
+                        <a href="main.html">Ana Sayfa</a>
+                        <a href="hizmetler.html">Hizmetler</a>
+                        <a href="hakkimizda.html">Hakkımızda</a>
+                        <a href="iletisim.html">İletişim</a>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Hizmetler</h3>
+                    <h3>Hizmetler</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="hizmetlergenel.html?service=beyazesya" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Beyaz Eşya Servisi</a>
-                        <a href="hizmetlergenel.html?service=buzdolabi" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Buzdolabı Servisi</a>
-                        <a href="hizmetlergenel.html?service=camasir" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Çamaşır Makinesi Servisi</a>
-                        <a href="hizmetlergenel.html?service=bulasik" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Bulaşık Makinesi Servisi</a>
-                        <a href="hizmetlergenel.html?service=firin" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Fırın Servisi</a>
-                        <a href="hizmetlergenel.html?service=klima" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Klima Servisi</a>
-                        <a href="hizmetlergenel.html?service=kombi" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Kombi Servisi</a>
-                        <a href="hizmetlergenel.html?service=televizyon" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Televizyon Servisi</a>
+                        <a href="hizmetlergenel.html?service=beyazesya">Beyaz Eşya Servisi</a>
+                        <a href="hizmetlergenel.html?service=buzdolabi">Buzdolabı Servisi</a>
+                        <a href="hizmetlergenel.html?service=camasir">Çamaşır Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=bulasik">Bulaşık Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=firin">Fırın Servisi</a>
+                        <a href="hizmetlergenel.html?service=klima">Klima Servisi</a>
+                        <a href="hizmetlergenel.html?service=kombi">Kombi Servisi</a>
+                        <a href="hizmetlergenel.html?service=televizyon">Televizyon Servisi</a>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Yasal</h3>
+                    <h3>Yasal</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="kvkk.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">KVKK</a>
-                        <a href="gizlilik-politikasi.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Gizlilik Politikası</a>
+                        <a href="kvkk.html">KVKK</a>
+                        <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Önemli Bilgilendirme</h3>
-                    <p style="color: #CED4DA; line-height: 1.6; font-size: 14px;">
+                    <h3>Önemli Bilgilendirme</h3>
+                    <p>
                         Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
                         Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
                     </p>
