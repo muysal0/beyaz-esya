@@ -15,10 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             font-weight: 400;
             line-height: 1.6;
             letter-spacing: -0.01em;
+            background: #F8F9FA;
+            margin: 0;
         }
         .menu-icon { display: none; }
         .nav-links { display: flex; }
@@ -34,7 +36,7 @@
                 position: absolute;
                 top: 70px;
                 right: 0;
-                background-color: #1D3557;
+                background: #37474F;
                 width: 100%;
                 flex-direction: column;
                 align-items: center;
@@ -119,10 +121,10 @@
         }
     </style>
 </head>
-<body style="background-color: #37474F; margin: 0;">
-    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #1D3557; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<body>
+    <header style="position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px;background:#37474F;box-shadow:0 2px 5px rgba(0,0,0,0.1)">
         <div>
-            <a href="main.html" style="font-size: 30px; color: white; margin-left: 15px; text-decoration: none; font-weight: 800; letter-spacing: -0.02em;">Beyaz Esya</a>
+            <a href="main.html" style="font-size: 30px; color: white; margin-left: 15px; text-decoration: none; font-weight: 800; letter-spacing: -0.02em;">Beyaz Eşya</a>
         </div>
         <a href="#nav-links" class="menu-icon" style="text-decoration: none; color: white;">☰</a>
         <nav class="nav-links" id="nav-links">
@@ -136,11 +138,11 @@
         Bizi Arayin
     </div>
 
-    <main style="background-color: #37474F; padding: 120px 0 60px 0;">
+    <main style="background-color: #F8F9FA; padding: 120px 0 60px 0;">
         <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
             <!-- Hero Section -->
-            <div class="hero-section" style="text-align: center; margin-bottom: 50px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.2);">
-                <h1 style="color: white; font-size: 48px; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">Hakkımızda</h1>
+            <div class="hero-section" style="text-align: center; margin-bottom: 50px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(13,110,253,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <h1 style="color: #212529; font-size: 48px; margin-bottom: 20px; text-shadow: none; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">Hakkımızda</h1>
             </div>
             
             <!-- Hakkımızda Bilgi Kutusu -->
@@ -187,48 +189,48 @@
             </div>
     </main>
 
-    <footer style="background-color: #212529; padding: 40px 0; margin-top: 50px;">
+    <footer style="background-color: #37474F; padding: 40px 0; margin-top: 50px;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Navigasyon</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="main.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Ana Sayfa</a>
-                        <a href="hizmetler.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Hizmetler</a>
-                        <a href="hakkimizda.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Hakkımızda</a>
-                        <a href="iletisim.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">İletişim</a>
+                        <a href="main.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Ana Sayfa</a>
+                        <a href="hizmetler.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Hizmetler</a>
+                        <a href="hakkimizda.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Hakkımızda</a>
+                        <a href="iletisim.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">İletişim</a>
                     </div>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Hizmetler</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="hizmetlergenel.html?service=beyazesya" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Beyaz Eşya Servisi</a>
-                        <a href="hizmetlergenel.html?service=buzdolabi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Buzdolabı Servisi</a>
-                        <a href="hizmetlergenel.html?service=camasir" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Çamaşır Makinesi Servisi</a>
-                        <a href="hizmetlergenel.html?service=bulasik" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Bulaşık Makinesi Servisi</a>
-                        <a href="hizmetlergenel.html?service=firin" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Fırın Servisi</a>
-                        <a href="hizmetlergenel.html?service=klima" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Klima Servisi</a>
-                        <a href="hizmetlergenel.html?service=kombi" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Kombi Servisi</a>
-                        <a href="hizmetlergenel.html?service=televizyon" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Televizyon Servisi</a>
+                        <a href="hizmetlergenel.html?service=beyazesya" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Beyaz Eşya Servisi</a>
+                        <a href="hizmetlergenel.html?service=buzdolabi" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Buzdolabı Servisi</a>
+                        <a href="hizmetlergenel.html?service=camasir" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Çamaşır Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=bulasik" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Bulaşık Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=firin" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Fırın Servisi</a>
+                        <a href="hizmetlergenel.html?service=klima" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Klima Servisi</a>
+                        <a href="hizmetlergenel.html?service=kombi" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Kombi Servisi</a>
+                        <a href="hizmetlergenel.html?service=televizyon" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Televizyon Servisi</a>
                     </div>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Yasal</h3>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="kvkk.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">KVKK</a>
-                        <a href="gizlilik-politikasi.html" style="color: #0D6EFD; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#0D6EFD'">Gizlilik Politikası</a>
+                        <a href="kvkk.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">KVKK</a>
+                        <a href="gizlilik-politikasi.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Gizlilik Politikası</a>
                     </div>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Önemli Bilgilendirme</h3>
-                    <p style="color: #ADB5BD; line-height: 1.6; font-size: 14px;">
+                    <p style="color: #CED4DA; line-height: 1.6; font-size: 14px;">
                         Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
                         Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
                     </p>
                 </div>
             </div>
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #0D6EFD;">
-                <p style="color: white; margin: 0; font-size: 14px;">© 2025 Beyaz Esya Teknik Servis. Tüm hakları saklıdır.</p>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #6C757D;">
+                <p style="color: #CED4DA; margin: 0; font-size: 14px;">© 2025 Beyaz Esya Teknik Servis. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
