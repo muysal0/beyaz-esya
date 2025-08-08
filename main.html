@@ -12,11 +12,11 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <title>Beyaz Eşya Teknik Servis - 7/24 Hizmet, 1 Yıl Garanti</title>
-    <!-- Kritik kaynaklar için preload -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" as="style">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Kritik kaynaklar için preload ve FCP/LCP optimizasyonu -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"></noscript>
     <style>
         /* Kritik CSS - CLS önleme optimizasyonu */
@@ -26,9 +26,19 @@
         .menu-icon{display:none;font-size:24px;cursor:pointer;text-decoration:none;color:white;line-height:1}
         .nav-links{display:flex;align-items:center}
         .nav-links a{text-decoration:none;color:white;margin:0 15px;font-size:18px;font-weight:500;letter-spacing:-0.005em;line-height:1}
-        main{background:#F8F9FA;padding:120px 0 60px 0;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px;min-height:calc(100vh - 180px)}
-        .hero-section{text-align:center;margin-bottom:50px;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-radius:20px;padding:40px;border:1px solid rgba(13,110,253,0.2);box-shadow:0 4px 12px rgba(0,0,0,0.08);min-height:320px;display:flex;flex-direction:column;justify-content:center}
-        .hero-section h1{color:#212529;font-size:48px;margin-bottom:20px;text-shadow:none;font-weight:800;letter-spacing:-0.02em;line-height:1.1;height:105px;display:flex;align-items:center;justify-content:center}
+        
+        /* Dropdown Styles */
+        .dropdown{position:relative;display:inline-block}
+        .dropdown-toggle{text-decoration:none;color:white;margin:0 15px;font-size:18px;font-weight:500;letter-spacing:-0.005em;line-height:1;cursor:pointer;display:flex;align-items:center;gap:5px}
+        .dropdown-arrow{font-size:12px;transition:transform 0.3s ease}
+        .dropdown-menu{position:absolute;top:100%;left:0;background:white;min-width:220px;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:8px;padding:8px 0;display:none;z-index:1001;border:1px solid rgba(0,0,0,0.1)}
+        .dropdown-menu a{color:#333;padding:12px 20px;display:block;font-size:14px;font-weight:400;margin:0;border-radius:0;transition:background-color 0.2s ease}
+        .dropdown-menu a:hover{background-color:#f8f9fa;color:#0D6EFD}
+        .dropdown:hover .dropdown-menu{display:block}
+        .dropdown:hover .dropdown-arrow{transform:rotate(180deg)}
+        main{background:#F8F9FA;padding:120px 0 60px 0;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px;min-height:calc(100vh - 180px);contain:layout}
+        .hero-section{text-align:center;margin-bottom:50px;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-radius:20px;padding:40px;border:1px solid rgba(13,110,253,0.2);box-shadow:0 4px 12px rgba(0,0,0,0.08);min-height:320px;display:flex;flex-direction:column;justify-content:center;contain:layout style}
+        .hero-section h1{color:#212529;font-size:   48px;margin-bottom:20px;text-shadow:none;font-weight:800;letter-spacing:-0.02em;line-height:1.1;height:105px;display:flex;align-items:center;justify-content:center;will-change:contents}
         .hero-section p{color:#495057;font-size:20px;line-height:1.6;margin:0;max-width:800px;margin:0 auto;font-weight:500;letter-spacing:-0.005em;min-height:50px}
         .reviews-section{margin-top:30px;padding-top:25px;border-top:1px solid rgba(13,110,253,0.2);min-height:60px;display:flex;align-items:center;justify-content:center}
         .reviews-container{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap}
@@ -61,6 +71,16 @@
             .nav-links { display: none; position: absolute; top: 70px; right: 0; background: #37474F; width: 100%; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 0; }
             .nav-links a { padding: 15px 0; width: 100%; text-align: center; margin: 0; }
             .nav-links:target { display: flex; }
+            
+            /* Mobile Dropdown Styles */
+            .dropdown { width: 100%; }
+            .dropdown-toggle { width: 100%; text-align: center; padding: 15px 0; margin: 0; justify-content: center; }
+            .dropdown-menu { position: static; background: #2a3a47; box-shadow: none; border: none; border-radius: 0; width: 100%; display: none; }
+            .dropdown-menu a { color: #CED4DA; padding: 10px 0; font-size: 16px; background: #2a3a47; }
+            .dropdown-menu a:hover { background: #1a2a37; color: white; }
+            .dropdown.active .dropdown-menu { display: block; }
+            .dropdown.active .dropdown-arrow { transform: rotate(180deg); }
+            
             main { padding: 100px 20px 60px 20px !important; min-height: calc(100vh - 160px) !important; }
             .hero-section { padding: 20px !important; margin-bottom: 30px !important; min-height: 250px !important; }
             .hero-section h1 { font-size: 24px !important; margin-bottom: 15px !important; height: 60px !important; }
@@ -91,20 +111,71 @@
         .font-loaded .service-box h2{font-family:'Inter',sans-serif}
     </style>
     <script>
-        // Font yükleme optimizasyonu
+        // Hızlı font yükleme optimizasyonu - FCP/LCP iyileştirmesi
         (function() {
-            // Font yükleme kontrolü
+            // Immediate font face loading for better performance
             if ('fonts' in document) {
-                document.fonts.ready.then(() => {
+                const fontFace = new FontFace('Inter', 'url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZhrib2Bg-4.woff2)', {
+                    weight: '400 800',
+                    display: 'swap'
+                });
+                
+                fontFace.load().then(function(loadedFont) {
+                    document.fonts.add(loadedFont);
+                    document.documentElement.classList.add('font-loaded');
+                }).catch(function() {
+                    // Fallback loading
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap';
+                    document.head.appendChild(link);
                     document.documentElement.classList.add('font-loaded');
                 });
+                
+                // Guaranteed loading timeout
+                setTimeout(() => {
+                    if (!document.documentElement.classList.contains('font-loaded')) {
+                        document.documentElement.classList.add('font-loaded');
+                    }
+                }, 100);
             } else {
-                // Eski tarayıcılar için fallback
+                // Legacy browser support
                 setTimeout(() => {
                     document.documentElement.classList.add('font-loaded');
-                }, 100);
+                }, 50);
             }
         })();
+    </script>
+    <script>
+        // Mobile dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            
+            if (dropdownToggle) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    // Only prevent default on mobile
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768 && !dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
     </script>
 </head>
 <body>
@@ -115,7 +186,19 @@
         <a href="#nav-links" class="menu-icon">☰</a>
         <nav class="nav-links" id="nav-links">
             <a href="main.html" style="font-weight: 600;">Ana Sayfa</a>
-            <a href="hizmetler.html">Hizmetler</a>
+            <div class="dropdown">
+                <a href="hizmetler.html" class="dropdown-toggle">Hizmetler <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="hizmetlergenel.html?service=beyazesya">Beyaz Eşya Servisi</a>
+                    <a href="hizmetlergenel.html?service=buzdolabi">Buzdolabı Servisi</a>
+                    <a href="hizmetlergenel.html?service=camasir">Çamaşır Makinesi Servisi</a>
+                    <a href="hizmetlergenel.html?service=bulasik">Bulaşık Makinesi Servisi</a>
+                    <a href="hizmetlergenel.html?service=firin">Fırın Servisi</a>
+                    <a href="hizmetlergenel.html?service=klima">Klima Servisi</a>
+                    <a href="hizmetlergenel.html?service=kombi">Kombi Servisi</a>
+                    <a href="hizmetlergenel.html?service=televizyon">Televizyon Servisi</a>
+                </div>
+            </div>
             <a href="hakkimizda.html">Hakkımızda</a>
             <a href="iletisim.html">İletişim</a>
         </nav>
@@ -152,13 +235,7 @@
                 </div>
             </div>
             
-            <!-- Hemen Ara Butonu -->
-            <div class="call-section">
-                <a href="#" class="call-button">
-                    <span><span style="margin-right: 15px;">📞</span>Hemen Ara</span>
-                </a>
-            </div>
-            
+            <!-- Service Grid -->
             <div class="service-grid">
                 <!-- 7/24 Hizmet -->
                 <div class="service-box">
@@ -190,6 +267,13 @@
                     <div>🔐</div>
                     <h2>%100 Güvenilir</h2>
                 </div>
+            </div>
+            
+            <!-- Hemen Ara Butonu -->
+            <div class="call-section" style="margin-top: 40px;">
+                <a href="#" class="call-button">
+                    <span><span style="margin-right: 15px;">📞</span>Hemen Ara</span>
+                </a>
             </div>
     </main>
 
