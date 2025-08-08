@@ -12,123 +12,157 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <title>Beyaz Eşya Teknik Servis - 7/24 Hizmet, 1 Yıl Garanti</title>
-    <!-- 🚀 Google Fonts Optimized Loading -->
+    <!-- 🚀 Critical Font Preload - FCP/LCP Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
     <style>
-        /* 🎯 Font Family Definitions - Google Fonts Optimized */
-        body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-weight:400;line-height:1.6;letter-spacing:-0.01em;background:#F8F9FA;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        /* 🎯 CRITICAL CSS ONLY - Above-the-fold - FCP/LCP Optimization */
+        body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-weight:400;line-height:1.6;background:#F8F9FA;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
         header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px;background:#37474F;box-shadow:0 2px 5px rgba(0,0,0,0.1);height:50px}
-        header a{font-size:30px;color:white;margin-left:15px;text-decoration:none;font-weight:800;letter-spacing:-0.02em;line-height:1}
+        header a{font-size:30px;color:white;margin-left:15px;text-decoration:none;font-weight:800;line-height:1}
         .menu-icon{display:none;font-size:24px;cursor:pointer;text-decoration:none;color:white;line-height:1}
         .nav-links{display:flex;align-items:center}
-        .nav-links a{text-decoration:none;color:white;margin:0 15px;font-size:18px;font-weight:500;letter-spacing:-0.005em;line-height:1}
+        .nav-links a{text-decoration:none;color:white;margin:0 15px;font-size:18px;font-weight:500;line-height:1}
+        main{background:#F8F9FA;padding:120px 20px 60px 20px;max-width:1200px;margin:0 auto;min-height:calc(100vh - 180px)}
+        .hero-section{text-align:center;margin-bottom:50px;background:rgba(255,255,255,0.95);border-radius:20px;padding:40px;border:1px solid rgba(13,110,253,0.2);box-shadow:0 4px 12px rgba(0,0,0,0.08);min-height:380px;display:flex;flex-direction:column;justify-content:center}
+        .hero-section h1{color:#212529;font-size:48px;margin:0 0 20px 0;font-weight:800;line-height:1.1;height:105px;display:flex;align-items:center;justify-content:center}
+        .hero-section p{color:#495057;font-size:20px;line-height:1.6;margin:0 auto;max-width:800px;font-weight:500;min-height:52px;display:flex;align-items:center;justify-content:center;text-align:center}
+        .call-section{text-align:center;margin-bottom:50px;min-height:140px;display:flex;align-items:center;justify-content:center}
+        .call-button{display:inline-flex;align-items:center;justify-content:center;background:#0D6EFD;padding:40px 80px;border-radius:20px;box-shadow:0 4px 8px rgba(13,110,253,0.2);text-decoration:none;min-height:60px;line-height:1}
+        .call-button span{color:white;font-size:40px;font-weight:700;line-height:1;height:40px;display:flex;align-items:center}
         
-        /* Dropdown Styles */
-        .dropdown{position:relative;display:inline-block}
-        .dropdown-toggle{text-decoration:none;color:white;margin:0 15px;font-size:18px;font-weight:500;letter-spacing:-0.005em;line-height:1;cursor:pointer;display:flex;align-items:center;gap:5px}
-        .dropdown-arrow{font-size:12px;transition:transform 0.3s ease}
-        .dropdown-menu{position:absolute;top:100%;left:0;background:white;min-width:220px;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:8px;padding:8px 0;display:none;z-index:1001;border:1px solid rgba(0,0,0,0.1)}
-        .dropdown-menu a{color:#333;padding:12px 20px;display:block;font-size:14px;font-weight:400;margin:0;border-radius:0;transition:background-color 0.2s ease}
-        .dropdown-menu a:hover{background-color:#f8f9fa;color:#0D6EFD}
-        .dropdown:hover .dropdown-menu{display:block}
-        .dropdown:hover .dropdown-arrow{transform:rotate(180deg)}
-        main{background:#F8F9FA;padding:120px 0 60px 0;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px;min-height:calc(100vh - 180px);contain:layout style}
-        .hero-section{text-align:center;margin-bottom:50px;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-radius:20px;padding:40px;border:1px solid rgba(13,110,253,0.2);box-shadow:0 4px 12px rgba(0,0,0,0.08);min-height:380px;display:flex;flex-direction:column;justify-content:center;contain:layout style;transform:translateZ(0)}
-        .hero-section h1{color:#212529;font-size:48px;margin:0 0 20px 0;text-shadow:none;font-weight:800;letter-spacing:-0.02em;line-height:1.1;height:105px;display:flex;align-items:center;justify-content:center;contain:layout style;will-change:auto}
-        .hero-section p{color:#495057;font-size:20px;line-height:1.6;margin:0 auto;max-width:800px;font-weight:500;letter-spacing:-0.005em;min-height:52px;display:flex;align-items:center;justify-content:center;text-align:center}
-        .reviews-section{margin-top:30px;padding-top:25px;border-top:1px solid rgba(13,110,253,0.2);min-height:70px;display:flex;align-items:center;justify-content:center;contain:layout style}
-        .reviews-container{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;height:40px}
-        .rating-display{display:flex;align-items:center;gap:12px;height:30px}
-        .stars{display:flex;gap:2px;align-items:center;height:24px}
-        .star{color:#FFD700;font-size:24px;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;line-height:1}
-        .rating-score{color:#212529;font-size:20px;font-weight:600;letter-spacing:-0.005em;line-height:1;height:24px;display:flex;align-items:center}
-        .review-count{color:#495057;font-size:16px;font-weight:500;letter-spacing:-0.005em;line-height:1;height:20px;display:flex;align-items:center}
-        .call-section{text-align:center;margin-bottom:50px;min-height:140px;display:flex;align-items:center;justify-content:center;contain:layout style}
-        .call-button{display:inline-flex;align-items:center;justify-content:center;background:#0D6EFD;padding:40px 80px;border-radius:20px;box-shadow:0 4px 8px rgba(13,110,253,0.2);text-decoration:none;min-height:60px;line-height:1;transform:translateZ(0);transition:transform 0.15s ease-out,box-shadow 0.15s ease-out;will-change:transform}
-        .call-button:hover{transform:translateY(-2px) translateZ(0);box-shadow:0 8px 16px rgba(13,110,253,0.3)}
-        .call-button span{color:white;font-size:40px;font-weight:700;letter-spacing:-0.01em;line-height:1;height:40px;display:flex;align-items:center}
-        .service-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,minmax(140px,auto));gap:20px;min-height:300px;contain:layout style;transform:translateZ(0)}
-        .service-box{background:white;padding:20px;border-radius:15px;border:1px solid rgba(13,110,253,0.15);text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);min-height:140px;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:translateZ(0);transition:transform 0.15s ease-out,box-shadow 0.15s ease-out;will-change:transform;contain:layout style}
-        .service-box:hover{transform:translateY(-3px) translateZ(0);box-shadow:0 6px 16px rgba(0,0,0,0.1)}
-        .service-box div{font-size:30px;color:#0D6EFD;margin-bottom:10px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;line-height:1}
-        .service-box h2{color:#212529;margin:0;font-size:16px;font-weight:600;letter-spacing:-0.005em;line-height:1.2;min-height:40px;display:flex;align-items:center;justify-content:center;text-align:center;max-width:100%}
-        footer{background-color:#37474F;padding:40px 0;margin-top:50px;min-height:320px;contain:layout style}
-        footer h3{color:white;margin:0 0 20px 0;font-size:20px;line-height:1.2;height:24px}
-        footer a{color:#CED4DA;text-decoration:none;font-size:16px;transition:color 0.15s ease-out;line-height:1.5;display:block;padding:5px 0;height:26px;will-change:color}
-        footer a:hover{color:white}
-        footer p{color:#CED4DA;line-height:1.6;font-size:14px;margin:0}
-        footer .footer-container{max-width:1200px;margin:0 auto;padding:0 20px}
-        footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-bottom:30px;min-height:220px}
-        footer .footer-section{min-height:170px}
-        footer .footer-links{display:flex;flex-direction:column;gap:10px;min-height:130px}
-        footer .footer-bottom{text-align:center;padding-top:20px;border-top:1px solid #6C757D;min-height:50px;display:flex;align-items:center;justify-content:center}
-        
-        /* Mobil CSS - CLS önleme ile */
-        @media (max-width: 768px) {
-            .menu-icon { display: block; }
-            .nav-links { display: none; position: absolute; top: 70px; right: 0; background: #37474F; width: 100%; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 0; }
-            .nav-links a { padding: 15px 0; width: 100%; text-align: center; margin: 0; }
-            .nav-links:target { display: flex; }
-            
-            /* Mobile Dropdown Styles */
-            .dropdown { width: 100%; }
-            .dropdown-toggle { width: 100%; text-align: center; padding: 15px 0; margin: 0; justify-content: center; }
-            .dropdown-menu { position: static; background: #2a3a47; box-shadow: none; border: none; border-radius: 0; width: 100%; display: none; }
-            .dropdown-menu a { color: #CED4DA; padding: 10px 0; font-size: 16px; background: #2a3a47; }
-            .dropdown-menu a:hover { background: #1a2a37; color: white; }
-            .dropdown.active .dropdown-menu { display: block; }
-            .dropdown.active .dropdown-arrow { transform: rotate(180deg); }
-            
-            main { padding: 100px 20px 60px 20px; min-height: calc(100vh - 160px); }
-            .hero-section { padding: 20px; margin-bottom: 30px; min-height: 300px; }
-            .hero-section h1 { font-size: 24px; margin-bottom: 15px; height: 60px; }
-            .hero-section p { font-size: 16px; line-height: 1.4; min-height: 44px; }
-            .reviews-section { min-height: 60px; }
-            .rating-display { flex-direction: row; gap: 10px; align-items: center; height: auto; }
-            .stars { justify-content: center; align-items: center; }
-            .star { font-size: 20px; width: 20px; height: 20px; }
-            .rating-score { font-size: 18px; height: auto; }
-            .review-count { font-size: 14px; text-align: center; height: auto; }
-            .call-section { min-height: 120px; }
-            .call-button { padding: 25px 50px; min-height: 50px; }
-            .call-button span { font-size: 24px; height: auto; }
-            .service-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, minmax(100px, auto)); gap: 8px; min-height: 220px; }
-            .service-box { padding: 10px; min-height: 100px; }
-            .service-box div { font-size: 20px; margin-bottom: 8px; width: 20px; height: 20px; }
-            .service-box h2 { font-size: 11px; margin: 0; line-height: 1.1; min-height: 32px; padding: 0 2px; }
-            footer { min-height: 280px; }
-            footer .footer-grid { grid-template-columns: 1fr; text-align: center; min-height: 200px; }
-            footer .footer-section { margin-bottom: 30px; min-height: 140px; }
-        }
-        
-        /* Optimized font loading class */
+        /* Font Loading States */
         .fonts-loaded body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
         .fonts-loaded .hero-section h1{font-family:'Inter',sans-serif}
         .fonts-loaded .hero-section p{font-family:'Inter',sans-serif}
         .fonts-loaded .call-button span{font-family:'Inter',sans-serif}
-        .fonts-loaded .service-box h2{font-family:'Inter',sans-serif}
+        
+        /* Critical Mobile CSS */
+        @media (max-width: 768px) {
+            .menu-icon { display: block; }
+            .nav-links { display: none; }
+            main { padding: 100px 20px 60px 20px; }
+            .hero-section { padding: 20px; min-height: 300px; }
+            .hero-section h1 { font-size: 24px; height: 60px; }
+            .hero-section p { font-size: 16px; min-height: 44px; }
+            .call-button { padding: 25px 50px; }
+            .call-button span { font-size: 24px; }
+        }
     </style>
-    <!-- 🚀 Font Loading Optimization Script -->
+    <!-- 🚀 Font Loading Optimization Script - FCP/LCP Optimized -->
     <script>
-        // Font loading performance optimizer - Google Fonts optimized
+        // Ultra-fast font loading - FCP/LCP optimization
         (function() {
-            // Simple font loading detection
+            // Immediate system font rendering
+            document.documentElement.style.fontFamily = 'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';
+            
+            // Async font loading after FCP
             if ('fonts' in document) {
-                document.fonts.ready.then(function() {
-                    document.documentElement.classList.add('fonts-loaded');
-                });
+                // Load fonts asynchronously after initial render
+                setTimeout(function() {
+                    document.fonts.ready.then(function() {
+                        document.documentElement.classList.add('fonts-loaded');
+                    });
+                }, 100);
                 
-                // Fallback timeout for slow connections
+                // Fallback for slow connections
                 setTimeout(function() {
                     document.documentElement.classList.add('fonts-loaded');
-                }, 3000);
+                }, 2000);
             } else {
                 // Immediate fallback for older browsers
                 document.documentElement.classList.add('fonts-loaded');
             }
         })();
+        
+        // Non-critical CSS loader - Load after FCP
+        function loadNonCriticalCSS() {
+            const nonCriticalCSS = `
+                /* Dropdown Styles - Non-Critical */
+                .dropdown{position:relative;display:inline-block}
+                .dropdown-toggle{text-decoration:none;color:white;margin:0 15px;font-size:18px;font-weight:500;letter-spacing:-0.005em;line-height:1;cursor:pointer;display:flex;align-items:center;gap:5px}
+                .dropdown-arrow{font-size:12px;transition:transform 0.3s ease}
+                .dropdown-menu{position:absolute;top:100%;left:0;background:white;min-width:220px;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:8px;padding:8px 0;display:none;z-index:1001;border:1px solid rgba(0,0,0,0.1)}
+                .dropdown-menu a{color:#333;padding:12px 20px;display:block;font-size:14px;font-weight:400;margin:0;border-radius:0;transition:background-color 0.2s ease}
+                .dropdown-menu a:hover{background-color:#f8f9fa;color:#0D6EFD}
+                .dropdown:hover .dropdown-menu{display:block}
+                .dropdown:hover .dropdown-arrow{transform:rotate(180deg)}
+                
+                /* Reviews Section - Non-Critical */
+                .reviews-section{margin-top:30px;padding-top:25px;border-top:1px solid rgba(13,110,253,0.2);min-height:70px;display:flex;align-items:center;justify-content:center;contain:layout style}
+                .reviews-container{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;height:40px}
+                .rating-display{display:flex;align-items:center;gap:12px;height:30px}
+                .stars{display:flex;gap:2px;align-items:center;height:24px}
+                .star{color:#FFD700;font-size:24px;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;line-height:1}
+                .rating-score{color:#212529;font-size:20px;font-weight:600;letter-spacing:-0.005em;line-height:1;height:24px;display:flex;align-items:center}
+                .review-count{color:#495057;font-size:16px;font-weight:500;letter-spacing:-0.005em;line-height:1;height:20px;display:flex;align-items:center}
+                
+                /* Service Grid - Non-Critical */
+                .service-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,minmax(140px,auto));gap:20px;min-height:300px;contain:layout style;transform:translateZ(0)}
+                .service-box{background:white;padding:20px;border-radius:15px;border:1px solid rgba(13,110,253,0.15);text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);min-height:140px;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:translateZ(0);transition:transform 0.15s ease-out,box-shadow 0.15s ease-out;will-change:transform;contain:layout style}
+                .service-box:hover{transform:translateY(-3px) translateZ(0);box-shadow:0 6px 16px rgba(0,0,0,0.1)}
+                .service-box div{font-size:30px;color:#0D6EFD;margin-bottom:10px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;line-height:1}
+                .service-box h2{color:#212529;margin:0;font-size:16px;font-weight:600;letter-spacing:-0.005em;line-height:1.2;min-height:40px;display:flex;align-items:center;justify-content:center;text-align:center;max-width:100%}
+                
+                /* Font Loading Enhanced */
+                .fonts-loaded .service-box h2{font-family:'Inter',sans-serif}
+                
+                /* Footer - Non-Critical */
+                footer{background-color:#37474F;padding:40px 0;margin-top:50px;min-height:320px;contain:layout style}
+                footer h3{color:white;margin:0 0 20px 0;font-size:20px;line-height:1.2;height:24px}
+                footer a{color:#CED4DA;text-decoration:none;font-size:16px;transition:color 0.15s ease-out;line-height:1.5;display:block;padding:5px 0;height:26px;will-change:color}
+                footer a:hover{color:white}
+                footer p{color:#CED4DA;line-height:1.6;font-size:14px;margin:0}
+                footer .footer-container{max-width:1200px;margin:0 auto;padding:0 20px}
+                footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-bottom:30px;min-height:220px}
+                footer .footer-section{min-height:170px}
+                footer .footer-links{display:flex;flex-direction:column;gap:10px;min-height:130px}
+                footer .footer-bottom{text-align:center;padding-top:20px;border-top:1px solid #6C757D;min-height:50px;display:flex;align-items:center;justify-content:center}
+                
+                /* Hover Effects - Non-Critical */
+                .call-button:hover{transform:translateY(-2px) translateZ(0);box-shadow:0 8px 16px rgba(13,110,253,0.3)}
+                
+                /* Extended Mobile CSS - Non-Critical */
+                @media (max-width: 768px) {
+                    .nav-links { position: absolute; top: 70px; right: 0; background: #37474F; width: 100%; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 0; }
+                    .nav-links a { padding: 15px 0; width: 100%; text-align: center; margin: 0; }
+                    .nav-links:target { display: flex; }
+                    .dropdown { width: 100%; }
+                    .dropdown-toggle { width: 100%; text-align: center; padding: 15px 0; margin: 0; justify-content: center; }
+                    .dropdown-menu { position: static; background: #2a3a47; box-shadow: none; border: none; border-radius: 0; width: 100%; display: none; }
+                    .dropdown-menu a { color: #CED4DA; padding: 10px 0; font-size: 16px; background: #2a3a47; }
+                    .dropdown-menu a:hover { background: #1a2a37; color: white; }
+                    .dropdown.active .dropdown-menu { display: block; }
+                    .dropdown.active .dropdown-arrow { transform: rotate(180deg); }
+                    .reviews-section { min-height: 60px; }
+                    .rating-display { flex-direction: row; gap: 10px; align-items: center; height: auto; }
+                    .stars { justify-content: center; align-items: center; }
+                    .star { font-size: 20px; width: 20px; height: 20px; }
+                    .rating-score { font-size: 18px; height: auto; }
+                    .review-count { font-size: 14px; text-align: center; height: auto; }
+                    .service-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, minmax(100px, auto)); gap: 8px; min-height: 220px; }
+                    .service-box { padding: 10px; min-height: 100px; }
+                    .service-box div { font-size: 20px; margin-bottom: 8px; width: 20px; height: 20px; }
+                    .service-box h2 { font-size: 11px; margin: 0; line-height: 1.1; min-height: 32px; padding: 0 2px; }
+                    footer { min-height: 280px; }
+                    footer .footer-grid { grid-template-columns: 1fr; text-align: center; min-height: 200px; }
+                    .footer-section { margin-bottom: 30px; min-height: 140px; }
+                }
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = nonCriticalCSS;
+            document.head.appendChild(style);
+        }
+        
+        // Load non-critical CSS after FCP
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadNonCriticalCSS);
+        } else {
+            setTimeout(loadNonCriticalCSS, 0);
+        }
     </script>
     <script>
         // Mobile dropdown functionality
