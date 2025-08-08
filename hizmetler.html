@@ -13,20 +13,26 @@
     <meta name="twitter:card" content="summary">
     <title>Hizmetlerimiz - Beyaz Eşya Teknik Servis</title>
     
-    <!-- 🚀 PERFORMANCE OPTIMIZATION: DNS & Resource Preloading -->
-    <!-- DNS preconnect for faster font loading -->
+    <!-- 🚀 AGGRESSIVE PERFORMANCE OPTIMIZATION -->
+    <!-- DNS Resolution Optimization -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Critical font preload for immediate text rendering -->
+    <!-- Critical Resource Preloading for Sub-1s FCP -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"></noscript>
     
-    <!-- Preload non-critical font weights asynchronously -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
+    <!-- Non-critical fonts with aggressive caching -->
+    <link rel="prefetch" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
     
     <style>
-        /* 🎯 CRITICAL CSS: Above-the-fold optimization for FCP/LCP */
+        /* 🎯 ULTRA-CRITICAL CSS: Sub-1s FCP/LCP Optimization */
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             font-weight: 400;
@@ -36,16 +42,21 @@
             margin: 0;
             font-display: swap;
             text-rendering: optimizeSpeed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            contain: layout style paint;
         }
         
-        /* Critical navigation styles for immediate rendering */
+        /* Critical navigation styles with performance optimizations */
         .menu-icon { 
             display: none;
             font-display: swap;
+            will-change: transform;
         }
         .nav-links { 
             display: flex;
             font-display: swap;
+            contain: layout style;
         }
         
         @media (max-width: 768px) {
@@ -75,32 +86,37 @@
             .nav-links:target {
                 display: flex;
             }
-            /* Mobile content optimization for faster paint */
+            /* Mobile content optimization for fastest paint */
             main {
                 padding: 100px 0 60px 0 !important;
                 will-change: transform;
+                contain: layout style paint;
             }
             /* Mobile hero section optimization */
             .hero-section {
                 padding: 20px !important;
                 margin-bottom: 30px !important;
                 will-change: transform;
+                contain: layout style;
             }
             .hero-section h1 {
                 font-size: 24px !important;
                 margin-bottom: 15px !important;
                 font-display: swap;
+                contain: layout style;
             }
-            /* Mobile service grid optimization for faster rendering */
+            /* Mobile service grid optimization for sub-1s rendering */
             .service-grid {
                 grid-template-columns: repeat(3, 1fr) !important;
                 gap: 10px !important;
                 contain: layout style;
+                will-change: transform;
             }
             .service-box {
                 padding: 15px !important;
                 min-height: 120px !important;
                 will-change: transform;
+                contain: layout style paint;
             }
             .service-box div {
                 font-size: 24px !important;
@@ -243,24 +259,121 @@
         }
     </style>
     
-    <!-- 🚀 CRITICAL PERFORMANCE SCRIPT: Non-blocking optimization -->
+    <!-- 🚀 ULTRA-PERFORMANCE SCRIPT: Sub-1s FCP Optimization -->
     <script>
-        // Immediate font optimization
+        // Immediate performance optimizations (before DOM ready)
         document.documentElement.style.fontDisplay = 'swap';
+        document.documentElement.style.textRendering = 'optimizeSpeed';
         
-        // Preload critical resources after DOM ready
-        document.addEventListener('DOMContentLoaded', function() {
-            // Enable hardware acceleration for smooth animations
-            document.body.style.transform = 'translateZ(0)';
+        // Enable hardware acceleration immediately
+        const style = document.createElement('style');
+        style.textContent = `
+            * { backface-visibility: hidden; }
+            body { transform: translateZ(0); }
+        `;
+        document.head.appendChild(style);
+        
+        // Critical font loading optimization
+        if ('fonts' in document) {
+            // Preload system fonts immediately
+            const systemFonts = ['system-ui', '-apple-system', 'BlinkMacSystemFont'];
+            systemFonts.forEach(font => {
+                document.fonts.load(`16px ${font}`);
+            });
             
-            // Optimize font loading
-            if ('fonts' in document) {
-                document.fonts.ready.then(function() {
-                    document.body.classList.add('fonts-loaded');
-                });
-            }
+            // Optimize web fonts
+            document.fonts.ready.then(() => {
+                document.body.classList.add('fonts-loaded');
+                document.body.style.fontDisplay = 'swap';
+            });
+        }
+        
+        // Immediate DOM optimizations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Enable compositing for all interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .dropdown, .service-box');
+            interactiveElements.forEach(el => {
+                el.style.willChange = 'transform';
+                el.style.contain = 'layout style';
+            });
+            
+            // Optimize images if any
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.hasAttribute('loading')) {
+                    img.setAttribute('loading', 'lazy');
+                }
+                img.style.contain = 'layout style paint';
+            });
         });
+        
+        // Prefetch next page resources
+        setTimeout(() => {
+            const prefetchLink = document.createElement('link');
+            prefetchLink.rel = 'prefetch';
+            prefetchLink.href = 'main.html';
+            document.head.appendChild(prefetchLink);
+        }, 1000);
     </script>
+    
+    <!-- 🚀 CRITICAL PATH CSS INJECTION for instant rendering -->
+    <style>
+        /* Above-the-fold critical styles for immediate FCP */
+        header { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            background: #37474F; 
+            height: 90px;
+            contain: layout style paint;
+            will-change: transform;
+        }
+        
+        main { 
+            padding-top: 120px; 
+            background: #F8F9FA;
+            contain: layout style;
+        }
+        
+        .hero-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            contain: layout style paint;
+        }
+        
+        .hero-section h1 {
+            font-size: 48px;
+            color: #212529;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            contain: layout style;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            contain: layout style;
+        }
+        
+        .service-box {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 60px;
+            text-align: center;
+            min-height: 158px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            contain: layout style paint;
+        }
+    </style>
 </head>
 <body>
     <header style="position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px;background:#37474F;box-shadow:0 2px 5px rgba(0,0,0,0.1)">
