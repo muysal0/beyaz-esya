@@ -13,13 +13,20 @@
     <meta name="twitter:card" content="summary">
     <title>Hizmetlerimiz - Beyaz Eşya Teknik Servis</title>
     
-    <!-- 🚀 Performance Optimization: Preconnect & Preload Fonts -->
+    <!-- 🚀 PERFORMANCE OPTIMIZATION: DNS & Resource Preloading -->
+    <!-- DNS preconnect for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"></noscript>
+    
+    <!-- Critical font preload for immediate text rendering -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"></noscript>
+    
+    <!-- Preload non-critical font weights asynchronously -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
     
     <style>
+        /* 🎯 CRITICAL CSS: Above-the-fold optimization for FCP/LCP */
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             font-weight: 400;
@@ -28,15 +35,25 @@
             background: #F8F9FA;
             margin: 0;
             font-display: swap;
+            text-rendering: optimizeSpeed;
         }
-        .menu-icon { display: none; }
-        .nav-links { display: flex; }
+        
+        /* Critical navigation styles for immediate rendering */
+        .menu-icon { 
+            display: none;
+            font-display: swap;
+        }
+        .nav-links { 
+            display: flex;
+            font-display: swap;
+        }
         
         @media (max-width: 768px) {
             .menu-icon { 
                 display: block;
                 font-size: 24px;
-                cursor: pointer;    
+                cursor: pointer;
+                font-display: swap;
             }
             .nav-links {
                 display: none;
@@ -58,87 +75,192 @@
             .nav-links:target {
                 display: flex;
             }
-            /* Main content mobile spacing */
+            /* Mobile content optimization for faster paint */
             main {
                 padding: 100px 0 60px 0 !important;
+                will-change: transform;
             }
-            /* Mobile hero section */
+            /* Mobile hero section optimization */
             .hero-section {
                 padding: 20px !important;
                 margin-bottom: 30px !important;
+                will-change: transform;
             }
             .hero-section h1 {
                 font-size: 24px !important;
                 margin-bottom: 15px !important;
+                font-display: swap;
             }
-            /* Mobile service grid */
+            /* Mobile service grid optimization for faster rendering */
             .service-grid {
                 grid-template-columns: repeat(3, 1fr) !important;
                 gap: 10px !important;
+                contain: layout style;
             }
             .service-box {
                 padding: 15px !important;
                 min-height: 120px !important;
+                will-change: transform;
             }
             .service-box div {
                 font-size: 24px !important;
                 margin-bottom: 8px !important;
+                font-display: swap;
             }
             .service-box h2 {
                 font-size: 12px !important;
                 margin-bottom: 8px !important;
+                font-display: swap;
             }
             .center-call-button {
                 padding: 15px !important;
                 min-height: 120px !important;
+                will-change: transform;
             }
             .center-call-button div {
                 font-size: 24px !important;
                 margin-bottom: 8px !important;
+                font-display: swap;
             }
             .center-call-button h2 {
                 font-size: 12px !important;
                 margin: 0 !important;
+                font-display: swap;
             }
-            /* Footer mobile optimization */
+            /* Footer mobile optimization with performance hints */
             footer div div {
                 grid-template-columns: 1fr !important;
                 text-align: center !important;
+                contain: layout style;
             }
             footer div div div {
                 margin-bottom: 30px !important;
+                will-change: transform;
             }
             footer div div div h3 {
                 text-align: center !important;
+                font-display: swap;
             }
             footer div div div div {
                 align-items: center !important;
             }
             footer div div div p {
                 text-align: center !important;
+                font-display: swap;
             }
         }
         
-        /* Dropdown Styles */
-        .dropdown{position:relative;display:inline-block}
-        .dropdown-menu{position:absolute;top:100%;left:0;background:white;min-width:220px;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:8px;padding:8px 0;display:none;z-index:1001;border:1px solid rgba(0,0,0,0.1)}
-        .dropdown-menu a{color:#333;padding:12px 20px;display:block;font-size:14px;font-weight:400;margin:0;border-radius:0;transition:background-color 0.2s ease;text-decoration:none}
-        .dropdown-menu a:hover{background-color:#f8f9fa;color:#0D6EFD}
-        .dropdown:hover .dropdown-menu{display:block}
-        .dropdown:hover .dropdown-arrow{transform:rotate(180deg)}
+        /* 🚀 Dropdown Styles - Optimized for performance */
+        .dropdown{
+            position:relative;
+            display:inline-block;
+            contain: layout style;
+        }
+        .dropdown-menu{
+            position:absolute;
+            top:100%;
+            left:0;
+            background:white;
+            min-width:220px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+            border-radius:8px;
+            padding:8px 0;
+            display:none;
+            z-index:1001;
+            border:1px solid rgba(0,0,0,0.1);
+            will-change: transform, opacity;
+        }
+        .dropdown-menu a{
+            color:#333;
+            padding:12px 20px;
+            display:block;
+            font-size:14px;
+            font-weight:400;
+            margin:0;
+            border-radius:0;
+            transition:background-color 0.2s ease;
+            text-decoration:none;
+            font-display: swap;
+        }
+        .dropdown-menu a:hover{
+            background-color:#f8f9fa;
+            color:#0D6EFD;
+        }
+        .dropdown:hover .dropdown-menu{
+            display:block;
+        }
+        .dropdown:hover .dropdown-arrow{
+            transform:rotate(180deg);
+        }
         
         @media (max-width: 768px) {
-            /* Mobile Dropdown Styles */
-            .dropdown { width: 100%; }
-            .dropdown-toggle { width: 100%; text-align: center; padding: 15px 0; margin: 0 !important; justify-content: center; display: block !important; gap: 0 !important; }
-            .dropdown-toggle .dropdown-arrow { margin-left: 5px; }
-            .dropdown-menu { position: static; background: #2a3a47; box-shadow: none; border: none; border-radius: 0; width: 100%; display: none; }
-            .dropdown-menu a { color: #CED4DA; padding: 10px 0; font-size: 16px; background: #2a3a47; }
-            .dropdown-menu a:hover { background: #1a2a37; color: white; }
-            .dropdown.active .dropdown-menu { display: block; }
-            .dropdown.active .dropdown-arrow { transform: rotate(180deg); }
+            /* 📱 Mobile Dropdown Styles - Performance Optimized */
+            .dropdown { 
+                width: 100%; 
+                contain: layout style;
+            }
+            .dropdown-toggle { 
+                width: 100%; 
+                text-align: center; 
+                padding: 15px 0; 
+                margin: 0 !important; 
+                justify-content: center; 
+                display: block !important; 
+                gap: 0 !important;
+                font-display: swap;
+            }
+            .dropdown-toggle .dropdown-arrow { 
+                margin-left: 5px;
+                will-change: transform;
+            }
+            .dropdown-menu { 
+                position: static; 
+                background: #2a3a47; 
+                box-shadow: none; 
+                border: none; 
+                border-radius: 0; 
+                width: 100%; 
+                display: none;
+                will-change: transform, opacity;
+            }
+            .dropdown-menu a { 
+                color: #CED4DA; 
+                padding: 10px 0; 
+                font-size: 16px; 
+                background: #2a3a47;
+                font-display: swap;
+            }
+            .dropdown-menu a:hover { 
+                background: #1a2a37; 
+                color: white;
+            }
+            .dropdown.active .dropdown-menu { 
+                display: block;
+            }
+            .dropdown.active .dropdown-arrow { 
+                transform: rotate(180deg);
+            }
         }
     </style>
+    
+    <!-- 🚀 CRITICAL PERFORMANCE SCRIPT: Non-blocking optimization -->
+    <script>
+        // Immediate font optimization
+        document.documentElement.style.fontDisplay = 'swap';
+        
+        // Preload critical resources after DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enable hardware acceleration for smooth animations
+            document.body.style.transform = 'translateZ(0)';
+            
+            // Optimize font loading
+            if ('fonts' in document) {
+                document.fonts.ready.then(function() {
+                    document.body.classList.add('fonts-loaded');
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <header style="position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px;background:#37474F;box-shadow:0 2px 5px rgba(0,0,0,0.1)">
