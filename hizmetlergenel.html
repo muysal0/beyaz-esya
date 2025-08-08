@@ -112,9 +112,9 @@
             .mobile-call-button div:last-child {
                 font-size: 16px !important;
             }
-            /* Hide fixed call button on mobile to avoid overlap */
+            /* Fixed call button visible on mobile with z-index */
             .fixed-call-button {
-                display: none !important;
+                z-index: 1050 !important;
             }
             /* Mobile feature cards */
             .feature-cards {
@@ -784,7 +784,7 @@
             <a href="iletisim.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 500; letter-spacing: -0.005em;">İletişim</a>
         </nav>
     </header>
-    <div class="fixed-call-button" style="position: fixed; bottom: 20px; right: 20px; background-color: #0D6EFD; padding: 15px 35px; border-radius: 50px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 18px; font-weight: 600; letter-spacing: -0.005em; cursor: pointer; color: white; transition: all 0.3s ease;">
+    <div class="fixed-call-button" style="position: fixed; bottom: 20px; right: 20px; background-color: #2E7D32; padding: 15px 35px; border-radius: 50px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-size: 18px; font-weight: 600; letter-spacing: -0.005em; cursor: pointer; color: white; transition: all 0.3s ease; z-index: 1050;">
         Bizi Arayın
     </div>
 
