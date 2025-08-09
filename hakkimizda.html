@@ -12,24 +12,254 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <title>Hakkımızda - Beyaz Eşya Teknik Servis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 🚀 Performance Optimization -->
+    <!-- DNS preconnection for instant resolution -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical font loading with swap display -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"></noscript>
+    
+    <!-- Critical CSS for immediate render -->
+    <!-- Critical CSS for immediate render -->
     <style>
+        /* Critical path styles for instant FCP */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             font-weight: 400;
             line-height: 1.6;
             letter-spacing: -0.01em;
             background: #F8F9FA;
-            margin: 0;
+            color: #333;
+            text-rendering: optimizeSpeed;
         }
-        .menu-icon { display: none; }
-        .nav-links { display: flex; }
         
+        /* Header - Critical for FCP */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #37474F;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            contain: layout style;
+        }
+        
+        .logo {
+            font-size: 30px;
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            contain: layout style;
+        }
+        
+        .menu-icon { 
+            display: none; 
+            font-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links { 
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: -0.005em;
+            contain: layout style;
+        }
+        
+        /* Main content - prevent CLS */
+        main {
+            background-color: #F8F9FA;
+            padding: 120px 0 60px 0;
+            contain: layout;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero section - above fold */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(13,110,253,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            contain: layout style;
+        }
+        
+        .hero-section h1 {
+            color: #212529;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            contain: layout style;
+        }
+        
+        /* About box - critical structure */
+        .about-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+            contain: layout style;
+        }
+        
+        .about-box h2 {
+            color: #1565C0;
+            margin-bottom: 15px;
+            font-size: 28px;
+            contain: layout style;
+        }
+        
+        .about-box h3 {
+            color: #1565C0;
+            margin-bottom: 15px;
+            font-size: 24px;
+            contain: layout style;
+        }
+        
+        .about-box p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* Call button */
+        .call-button {
+            background: #2E7D32;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            text-decoration: none;
+            contain: layout style;
+        }
+        
+        .call-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        /* Fixed call button */
+        .fixed-call-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2E7D32;
+            padding: 15px 35px;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+            letter-spacing: -0.005em;
+            transition: all 0.3s ease;
+            z-index: 1050;
+        }
+        
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .dropdown-arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 8px 0;
+            display: none;
+            z-index: 1001;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-menu a {
+            color: #333;
+            padding: 12px 20px;
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f8f9fa;
+            color: #0D6EFD;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+    
+    <!-- Non-critical CSS - Load asynchronously -->
+    <style media="print" onload="this.media='all'; this.onload=null;">
+        /* Mobile responsive styles */
         @media (max-width: 768px) {
             .menu-icon { 
                 display: block;
-                font-size: 24px;
-                cursor: pointer;    
             }
             .nav-links {
                 display: none;
@@ -51,10 +281,12 @@
             .nav-links:target {
                 display: flex;
             }
+            
             /* Main content mobile spacing */
             main {
                 padding: 100px 0 60px 0 !important;
             }
+            
             /* Mobile hero section */
             .hero-section {
                 padding: 20px !important;
@@ -64,17 +296,13 @@
                 font-size: 24px !important;
                 margin-bottom: 15px !important;
             }
+            
             /* Mobile optimizations for about page */
-            .about-container {
-                max-width: 100% !important;
+            .container {
                 padding: 0 15px !important;
             }
             .about-box {
                 padding: 20px !important;
-                margin-bottom: 20px !important;
-            }
-            .about-box h1 {
-                font-size: 28px !important;
                 margin-bottom: 20px !important;
             }
             .about-box h2 {
@@ -89,59 +317,309 @@
                 font-size: 14px !important;
                 margin-bottom: 15px !important;
             }
-            .call-button {
-                padding: 8px 15px !important;
+            
+            /* Mobile dropdown styles */
+            .dropdown { 
+                width: 100%; 
             }
-            .call-button div {
-                font-size: 16px !important;
+            .dropdown-toggle { 
+                width: 100%; 
+                text-align: center; 
+                padding: 15px 0; 
+                margin: 0 !important; 
+                justify-content: center; 
+                display: block !important; 
             }
-            .call-button h2 {
-                font-size: 12px !important;
+            .dropdown-menu { 
+                position: static; 
+                background: #2a3a47; 
+                box-shadow: none; 
+                border: none; 
+                border-radius: 0; 
+                width: 100%; 
+                display: none; 
             }
-            .call-button p {
-                font-size: 10px !important;
+            .dropdown-menu a { 
+                color: #CED4DA; 
+                padding: 10px 0; 
+                font-size: 16px; 
+                background: #2a3a47; 
             }
-            /* Footer mobile optimization */
-            footer div div {
+            .dropdown-menu a:hover { 
+                background: #1a2a37; 
+                color: white; 
+            }
+            .dropdown.active .dropdown-menu { 
+                display: block; 
+            }
+            .dropdown.active .dropdown-arrow { 
+                transform: rotate(180deg); 
+            }
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #37474F;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        footer h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        footer a {
+            color: #CED4DA;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        footer p {
+            color: #CED4DA;
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
                 grid-template-columns: 1fr !important;
                 text-align: center !important;
             }
-            footer div div div {
+            .footer-grid > div {
                 margin-bottom: 30px !important;
             }
-            footer div div div h3 {
-                text-align: center !important;
-            }
-            footer div div div div {
-                align-items: center !important;
-            }
-            footer div div div p {
-                text-align: center !important;
+        }
+        
+        /* Final Performance Optimizations */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            contain: layout style;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .footer-links a {
+            color: #CED4DA;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s ease;
+            will-change: color;
+            transform: translateZ(0);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        footer p {
+            color: #CED4DA;
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        /* Ultra-fast rendering optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
         
-        /* Dropdown Styles */
-        .dropdown{position:relative;display:inline-block}
-        .dropdown-menu{position:absolute;top:100%;left:0;background:white;min-width:220px;box-shadow:0 4px 12px rgba(0,0,0,0.15);border-radius:8px;padding:8px 0;display:none;z-index:1001;border:1px solid rgba(0,0,0,0.1)}
-        .dropdown-menu a{color:#333;padding:12px 20px;display:block;font-size:14px;font-weight:400;margin:0;border-radius:0;transition:background-color 0.2s ease;text-decoration:none}
-        .dropdown-menu a:hover{background-color:#f8f9fa;color:#0D6EFD}
-        .dropdown:hover .dropdown-menu{display:block}
-        .dropdown:hover .dropdown-arrow{transform:rotate(180deg)}
+        /* Force GPU acceleration on critical elements */
+        header, .main-container, footer, .back-btn {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
         
-        @media (max-width: 768px) {
-            /* Mobile Dropdown Styles */
-            .dropdown { width: 100%; }
-            .dropdown-toggle { width: 100%; text-align: center; padding: 15px 0; margin: 0 !important; justify-content: center; display: block !important; gap: 0 !important; }
-            .dropdown-toggle .dropdown-arrow { margin-left: 5px; }
-            .dropdown-menu { position: static; background: #2a3a47; box-shadow: none; border: none; border-radius: 0; width: 100%; display: none; }
-            .dropdown-menu a { color: #CED4DA; padding: 10px 0; font-size: 16px; background: #2a3a47; }
-            .dropdown-menu a:hover { background: #1a2a37; color: white; }
-            .dropdown.active .dropdown-menu { display: block; }
-            .dropdown.active .dropdown-arrow { transform: rotate(180deg); }
+        /* Performance containment */
+        .about-box, .container, .nav-links {
+            contain: layout style paint;
         }
     </style>
+    <!-- Critical performance optimization -->
     <script>
-        // Mobile dropdown functionality
+        // Font loading optimization
+        if ('fonts' in document) {
+            document.fonts.ready.then(() => {
+                document.body.style.fontFamily = 'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+            });
+        }
+        
+        // GPU acceleration for critical elements
+        window.addEventListener('DOMContentLoaded', () => {
+            const criticalElements = ['header', '.hero-section', '.about-box'];
+            criticalElements.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => {
+                    el.style.transform = 'translateZ(0)';
+                    el.style.willChange = 'auto';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="main.html" class="logo">Beyaz Eşya</a>
+        </div>
+        <a href="#nav-links" class="menu-icon">☰</a>
+        <nav class="nav-links" id="nav-links">
+            <a href="main.html">Ana Sayfa</a>
+            <div class="dropdown">
+                <a href="hizmetler.html" class="dropdown-toggle">
+                    Hizmetler 
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="hizmetlergenel.html?service=beyazesya">Beyaz Eşya Servisi</a>
+                    <a href="hizmetlergenel.html?service=buzdolabi">Buzdolabı Servisi</a>
+                    <a href="hizmetlergenel.html?service=camasir">Çamaşır Makinesi Servisi</a>
+                    <a href="hizmetlergenel.html?service=bulasik">Bulaşık Makinesi Servisi</a>
+                    <a href="hizmetlergenel.html?service=firin">Fırın Servisi</a>
+                    <a href="hizmetlergenel.html?service=klima">Klima Servisi</a>
+                    <a href="hizmetlergenel.html?service=kombi">Kombi Servisi</a>
+                    <a href="hizmetlergenel.html?service=televizyon">Televizyon Servisi</a>
+                </div>
+            </div>
+            <a href="hakkimizda.html" style="font-weight: 600;">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+    
+    <div class="fixed-call-button">
+        Bizi Arayın
+    </div>
+
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h1>Hakkımızda</h1>
+            </div>
+            
+            <!-- Hakkımızda Bilgi Kutusu -->
+            <div class="about-box">
+                <div style="margin-bottom: 30px;">
+                    <h2>Beyaz Eşya Teknik Servis</h2>
+                    <p>
+                        2010 yılından beri İstanbul genelinde beyaz eşya tamiri konusunda hizmet vermekteyiz. 
+                        Deneyimli teknisyen kadromuz ile tüm marka beyaz eşyalarınızın garantisi dolmuş 
+                        ürünlerinin tamiri konusunda profesyonel hizmet sunuyoruz.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3>📍 Adres Bilgileri</h3>
+                    <p style="font-size: 16px;">
+                        <strong>Merkez Ofis:</strong><br>
+                        Ataşehir Mahallesi, Teknoloji Caddesi No: 45/A<br>
+                        Ataşehir / İSTANBUL<br>
+                        <strong>Telefon:</strong> 0212 555 0123<br>
+                        <strong>Çalışma Saatleri:</strong> 09:00 - 18:00 (Pazartesi - Cumartesi)
+                    </p>
+                </div>
+
+                <div>
+                    <h3>🔧 Hizmetlerimiz</h3>
+                    <p style="font-size: 16px;">
+                        Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon 
+                        tamiri konularında uzman teknisyen kadromuz ile 7/24 hizmet vermekteyiz. 
+                        Garantisi dolmuş tüm beyaz eşya ürünleriniz için hızlı ve güvenilir çözümler sunuyoruz.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hemen Ara Butonu -->
+            <div style="text-align: center;">
+                <a href="tel:02125550123" class="call-button">
+                    <div style="font-size: 24px; color: white;">📞</div>
+                    <span style="color: white; font-size: 18px; font-weight: bold;">Bizi Arayın</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="footer-grid">
+                <div>
+                    <h3>Navigasyon</h3>
+                    <div class="footer-links">
+                        <a href="main.html">Ana Sayfa</a>
+                        <a href="hizmetler.html">Hizmetler</a>
+                        <a href="hakkimizda.html">Hakkımızda</a>
+                        <a href="iletisim.html">İletişim</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Hizmetler</h3>
+                    <div class="footer-links">
+                        <a href="hizmetlergenel.html?service=beyazesya">Beyaz Eşya Servisi</a>
+                        <a href="hizmetlergenel.html?service=buzdolabi">Buzdolabı Servisi</a>
+                        <a href="hizmetlergenel.html?service=camasir">Çamaşır Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=bulasik">Bulaşık Makinesi Servisi</a>
+                        <a href="hizmetlergenel.html?service=firin">Fırın Servisi</a>
+                        <a href="hizmetlergenel.html?service=klima">Klima Servisi</a>
+                        <a href="hizmetlergenel.html?service=kombi">Kombi Servisi</a>
+                        <a href="hizmetlergenel.html?service=televizyon">Televizyon Servisi</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Yasal</h3>
+                    <div class="footer-links">
+                        <a href="kvkk.html">KVKK</a>
+                        <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Önemli Bilgilendirme</h3>
+                    <p>
+                        Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
+                        Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
+                    </p>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #6C757D;">
+                <p>© 2025 Beyaz Esya Teknik Servis. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Deferred JavaScript for better performance -->
+    <script defer>
+        // Mobile dropdown functionality - loaded after page render
         document.addEventListener('DOMContentLoaded', function() {
             const dropdown = document.querySelector('.dropdown');
             const dropdownToggle = document.querySelector('.dropdown-toggle');
@@ -170,131 +648,28 @@
                 });
             }
         });
+        
+        // Load additional font weights if needed
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap';
+                document.head.appendChild(link);
+            });
+        }
+        
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            if (performance.getEntriesByName) {
+                const fcp = performance.getEntriesByName('first-contentful-paint')[0];
+                const lcp = performance.getEntriesByName('largest-contentful-paint')[0];
+                console.log('🚀 Performance Metrics:');
+                console.log('FCP:', fcp ? Math.round(fcp.startTime) + 'ms' : 'Measuring...');
+                console.log('LCP:', lcp ? Math.round(lcp.startTime) + 'ms' : 'Measuring...');
+            }
+        });
     </script>
-</head>
-<body>
-    <header style="position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px;background:#37474F;box-shadow:0 2px 5px rgba(0,0,0,0.1)">
-        <div>
-            <a href="main.html" style="font-size: 30px; color: white; margin-left: 15px; text-decoration: none; font-weight: 800; letter-spacing: -0.02em;">Beyaz Eşya</a>
-        </div>
-        <a href="#nav-links" class="menu-icon" style="text-decoration: none; color: white;">☰</a>
-        <nav class="nav-links" id="nav-links">
-            <a href="main.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 500; letter-spacing: -0.005em;">Ana Sayfa</a>
-            <div class="dropdown">
-                <a href="hizmetler.html" class="dropdown-toggle" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 500; letter-spacing: -0.005em; cursor: pointer; display: flex; align-items: center; gap: 5px;">Hizmetler <span class="dropdown-arrow" style="font-size: 12px; transition: transform 0.3s ease;">▼</span></a>
-                <div class="dropdown-menu">
-                    <a href="hizmetlergenel.html?service=beyazesya">Beyaz Eşya Servisi</a>
-                    <a href="hizmetlergenel.html?service=buzdolabi">Buzdolabı Servisi</a>
-                    <a href="hizmetlergenel.html?service=camasir">Çamaşır Makinesi Servisi</a>
-                    <a href="hizmetlergenel.html?service=bulasik">Bulaşık Makinesi Servisi</a>
-                    <a href="hizmetlergenel.html?service=firin">Fırın Servisi</a>
-                    <a href="hizmetlergenel.html?service=klima">Klima Servisi</a>
-                    <a href="hizmetlergenel.html?service=kombi">Kombi Servisi</a>
-                    <a href="hizmetlergenel.html?service=televizyon">Televizyon Servisi</a>
-                </div>
-            </div>
-            <a href="hakkimizda.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 600; letter-spacing: -0.005em;">Hakkımızda</a>
-            <a href="iletisim.html" style="text-decoration: none; color: white; margin: 0 15px; font-size: 18px; font-weight: 500; letter-spacing: -0.005em;">İletişim</a>
-        </nav>
-    </header>
-    <div style="position: fixed; bottom: 20px; right: 20px; background-color: #2E7D32; padding: 15px 35px; border-radius: 50px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); font-size: 18px; font-weight: 600; cursor: pointer; color: white; letter-spacing: -0.005em; transition: all 0.3s ease;">
-        Bizi Arayın
-    </div>
 
-    <main style="background-color: #F8F9FA; padding: 120px 0 60px 0;">
-        <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
-            <!-- Hero Section -->
-            <div class="hero-section" style="text-align: center; margin-bottom: 50px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 1px solid rgba(13,110,253,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h1 style="color: #212529; font-size: 48px; margin-bottom: 20px; text-shadow: none; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">Hakkımızda</h1>
-            </div>
-            
-            <!-- Hakkımızda Bilgi Kutusu -->
-            <div style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; margin-bottom: 30px;">
-                <div style="margin-bottom: 30px;">
-                    <h2 style="color: #1565C0; margin-bottom: 15px; font-size: 28px;">Beyaz Eşya Teknik Servis</h2>
-                    <p style="color: #666; font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
-                        2010 yılından beri İstanbul genelinde beyaz eşya tamiri konusunda hizmet vermekteyiz. 
-                        Deneyimli teknisyen kadromuz ile tüm marka beyaz eşyalarınızın garantisi dolmuş 
-                        ürünlerinin tamiri konusunda profesyonel hizmet sunuyoruz.
-                    </p>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h3 style="color: #1565C0; margin-bottom: 15px; font-size: 24px;">📍 Adres Bilgileri</h3>
-                    <p style="color: #666; font-size: 16px; line-height: 1.6;">
-                        <strong>Merkez Ofis:</strong><br>
-                        Ataşehir Mahallesi, Teknoloji Caddesi No: 45/A<br>
-                        Ataşehir / İSTANBUL<br>
-                        <strong>Telefon:</strong> 0212 555 0123<br>
-                        <strong>Çalışma Saatleri:</strong> 09:00 - 18:00 (Pazartesi - Cumartesi)
-                    </p>
-                </div>
-
-                <div>
-                    <h3 style="color: #1565C0; margin-bottom: 15px; font-size: 24px;">🔧 Hizmetlerimiz</h3>
-                    <p style="color: #666; font-size: 16px; line-height: 1.6;">
-                        Buzdolabı, çamaşır makinesi, bulaşık makinesi, fırın, klima, kombi ve televizyon 
-                        tamiri konularında uzman teknisyen kadromuz ile 7/24 hizmet vermekteyiz. 
-                        Garantisi dolmuş tüm beyaz eşya ürünleriniz için hızlı ve güvenilir çözümler sunuyoruz.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Hemen Ara Butonu -->
-            <div style="text-align: center;">
-                <a href="tel:02125550123" style="text-decoration: none; display: block;">
-                    <div style="background: #2E7D32; padding: 20px 40px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 15px;">
-                        <div style="font-size: 24px; color: white;">📞</div>
-                        <span style="color: white; font-size: 18px; font-weight: bold;">Bizi Arayın</span>
-                    </div>
-                </a>
-            </div>
-    </main>
-
-    <footer style="background-color: #37474F; padding: 40px 0; margin-top: 50px;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
-                <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Navigasyon</h3>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="main.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Ana Sayfa</a>
-                        <a href="hizmetler.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Hizmetler</a>
-                        <a href="hakkimizda.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Hakkımızda</a>
-                        <a href="iletisim.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">İletişim</a>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Hizmetler</h3>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="hizmetlergenel.html?service=beyazesya" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Beyaz Eşya Servisi</a>
-                        <a href="hizmetlergenel.html?service=buzdolabi" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Buzdolabı Servisi</a>
-                        <a href="hizmetlergenel.html?service=camasir" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Çamaşır Makinesi Servisi</a>
-                        <a href="hizmetlergenel.html?service=bulasik" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Bulaşık Makinesi Servisi</a>
-                        <a href="hizmetlergenel.html?service=firin" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Fırın Servisi</a>
-                        <a href="hizmetlergenel.html?service=klima" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Klima Servisi</a>
-                        <a href="hizmetlergenel.html?service=kombi" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Kombi Servisi</a>
-                        <a href="hizmetlergenel.html?service=televizyon" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Televizyon Servisi</a>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Yasal</h3>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="kvkk.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">KVKK</a>
-                        <a href="gizlilik-politikasi.html" style="color: #CED4DA; text-decoration: none; font-size: 16px; transition: color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#CED4DA'">Gizlilik Politikası</a>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="color: white; margin-bottom: 20px; font-size: 20px;">Önemli Bilgilendirme</h3>
-                    <p style="color: #CED4DA; line-height: 1.6; font-size: 14px;">
-                        Firmamız hiçbir marka için yetkili servis değildir. Sadece garantisi dolmuş ürünlerin tamiri konusunda hizmet vermekteyiz. 
-                        Sunduğumuz hizmetler bağımsız teknik servis kapsamındadır.
-                    </p>
-                </div>
-            </div>
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #6C757D;">
-                <p style="color: #CED4DA; margin: 0; font-size: 14px;">© 2025 Beyaz Esya Teknik Servis. Tüm hakları saklıdır.</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
